@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shockr-angular": {
+    "front-end": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/shockr-angular",
+            "outputPath": "dist/front-end",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "shockr-angular:build"
+            "browserTarget": "front-end:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "shockr-angular:build:production"
+              "browserTarget": "front-end:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shockr-angular:build"
+            "browserTarget": "front-end:build"
           }
         },
         "test": {
@@ -111,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "shockr-angular:serve"
+            "devServerTarget": "front-end:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "shockr-angular:serve:production"
+              "devServerTarget": "front-end:serve:production"
             }
           }
         },
@@ -131,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "shockr-angular"
+  "defaultProject": "front-end"
 }
