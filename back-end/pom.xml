@@ -20,6 +20,7 @@
         <mockito.version>2.23.4</mockito.version>
         <lombok.version>1.18.4</lombok.version>
         <mapstruct.version>1.2.0.Final</mapstruct.version>
+        <mapstruct.processor.version>1.2.0.Final</mapstruct.processor.version>
     </properties>
 
     <dependencies>
@@ -51,7 +52,11 @@
             <artifactId>mapstruct</artifactId>
             <version>${mapstruct.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${mapstruct.processor.version}</version>
+        </dependency>
 
         <!--TESTS-->
         <dependency>
