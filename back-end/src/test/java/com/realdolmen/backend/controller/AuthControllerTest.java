@@ -54,7 +54,7 @@ public class AuthControllerTest {
         verify(userFacade, times(1)).findUserByUsername(expectedUsername);
     }
 
-    //TODO: convert to TestRestTemplate test
+    //TODO: Convert to TestRestTemplate test
     /*@Test
     public void testShouldRegisterUser() throws Exception {
         User user = new User("Karel");
