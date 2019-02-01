@@ -10,19 +10,18 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserKarel;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
-public class UserFacadeTest {
+public class UserFacadeImplTest {
     @Mock
     private UserMapperImpl userMapper;
     @Mock
     private UserService userService;
     @InjectMocks
-    private UserFacade userFacade;
+    private UserFacadeImpl userFacade;
 
     @Test
     public void testShouldMockFacade() {
@@ -40,7 +39,8 @@ public class UserFacadeTest {
 
     @Test
     public void testShouldFindUserByUsername() {
-        String username = buildUserKarel().build().getUsername();
+        User user = new User("Karel");
+        String username = user.getUsername();
 
         userFacade.findUserByUsername(username);
 

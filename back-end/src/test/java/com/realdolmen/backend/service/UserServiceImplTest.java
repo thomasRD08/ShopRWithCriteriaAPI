@@ -7,29 +7,25 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.test.context.ActiveProfiles;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserGuust;
-import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserKarel;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
-@ActiveProfiles("test")
-public class UserServiceTest {
+public class UserServiceImplTest {
     @InjectMocks
-    private UserService userService;
+    private UserServiceImpl userService;
     @Mock
     private UserRepository userRepository;
 
     @Test
-    public void testSavesUser() {
+    public void testShouldSaveUser() {
         // create data
-        User expectedUser = buildUserKarel().build();
+        User expectedUser = new User("Karel");
 
         // mock repo
         when(userRepository.save(any())).thenReturn(expectedUser);
@@ -43,8 +39,8 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testFindsUserById() {
-        User expectedUser = buildUserKarel().build();
+    public void testShouldFindUserById() {
+        User expectedUser = new User("Karel");
 
         when(userRepository.save(any())).thenReturn(expectedUser);
         when(userRepository.findById(any())).thenReturn(Optional.of(expectedUser));
@@ -58,8 +54,8 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testFindsUserByUsername() {
-        User expectedUser = buildUserKarel().build();
+    public void testShouldFindUserByUsername() {
+        User expectedUser = new User("Karel");
 
         when(userRepository.save(any())).thenReturn(expectedUser);
         when(userRepository.findByUsername(any())).thenReturn(Optional.of(expectedUser));
@@ -73,10 +69,10 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testFindsAllUsers() {
+    public void testShouldFindAllUsers() {
         List<User> users = new ArrayList<>();
-        users.add(buildUserKarel().build());
-        users.add(buildUserGuust().build());
+        users.add(new User("Karel"));
+        users.add(new User("Guust"));
 
         when(userRepository.findAll()).thenReturn(users);
 
@@ -87,8 +83,8 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testDeletesUser() {
-        User user = buildUserKarel().build();
+    public void testShouldDeleteUser() {
+        User user = new User("Karel");
 
         userService.delete(user);
 

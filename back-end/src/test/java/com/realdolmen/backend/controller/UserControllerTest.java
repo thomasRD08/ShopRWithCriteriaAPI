@@ -1,7 +1,7 @@
 package com.realdolmen.backend.controller;
 
 import com.realdolmen.backend.advice.GlobalExceptionHandler;
-import com.realdolmen.backend.facade.UserFacade;
+import com.realdolmen.backend.facade.UserFacadeImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(MockitoJUnitRunner.class)
 public class UserControllerTest {
     @Mock
-    private UserFacade userFacade;
+    private UserFacadeImpl userFacade;
     @InjectMocks
     private UserController userController;
     private MockMvc mockMvc;
@@ -30,8 +30,10 @@ public class UserControllerTest {
                 .build();
     }
 
+
+
     @Test
-    public void testFindsAllUsers() throws Exception {
+    public void testShouldFindAllUsers() throws Exception {
         mockMvc.perform(get("/users"))
                 .andDo(print())
                 .andExpect(status().isOk());
