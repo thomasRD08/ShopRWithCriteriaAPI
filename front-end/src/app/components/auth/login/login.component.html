@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-title>Log In</mat-card-title>
+  <mat-form-field>
+    <mat-select placeholder="Select a user" [(value)]="selectedUser" >
+      <mat-option *ngFor="let user of users" [value]="user">
+        {{user.username}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-button (click)="login()">Log In</button>
+  <button mat-button routerLink="/register">Create User</button>
+</mat-card>
