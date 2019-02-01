@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <span>Shockr</span>
+
+  <div class="left">
+    <button mat-button [matMenuTriggerFor]="overview">Overview</button>
+    <mat-menu #overview="matMenu">
+      <button mat-menu-item routerLink="/products">Products</button>
+      <button mat-menu-item>Books</button>
+      <button mat-menu-item>Games</button>
+      <button mat-menu-item>Lps</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="addProduct">Add Products</button>
+    <mat-menu #addProduct="matMenu">
+      <button mat-menu-item>Add Book</button>
+      <button mat-menu-item>Add Game</button>
+      <button mat-menu-item>Add Lp</button>
+    </mat-menu>
+  </div>
+
+  <div class="right">
+    <button mat-button>Shopping Cart</button>
+
+    <button mat-button [matMenuTriggerFor]="currentUser">{{user.username}}</button>
+    <mat-menu #currentUser="matMenu">
+      <button mat-menu-item>Favorites</button>
+      <button mat-menu-item (click)="logout()">Log Out</button>
+    </mat-menu>
+
+    <button mat-button routerLink="/login" >Log In/ Register</button>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,28 @@
+@import "../../../../styles";
+
+.mat-toolbar {
+  background-color: $neutral;
+  margin-top: 8px;
+  color: $fontColor;
+}
+
+.mat-button {
+  border-radius: 6px;
+  margin-left: 3px;
+  margin-right: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.mat-button:hover {
+  background-color: $sky;
+}
+
+.left {
+  margin-left: 15px;
+}
+
+.right {
+//TODO: justify-content flex-end?
+}
+
