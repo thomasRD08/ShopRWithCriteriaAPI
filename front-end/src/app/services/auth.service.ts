@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {User} from "../models/user";
-import {ObjectUnsubscribedError, Observable, Subject} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {GlobalConstant} from "../components/shared/global-constant";
 
 @Injectable({
