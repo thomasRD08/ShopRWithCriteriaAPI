@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$sky: #caebf2;
+$carbon: #a9a9a9;
+$watermelon: #ff3b3f;
+$neutral: #efefef;
+$fontColor: #585858;
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $neutral;
+}
