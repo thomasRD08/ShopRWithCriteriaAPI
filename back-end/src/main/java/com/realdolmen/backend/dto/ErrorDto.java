@@ -7,12 +7,18 @@ import lombok.Singular;
 
 import java.util.List;
 
+import static org.springframework.util.CollectionUtils.isEmpty;
+
 @Getter
 @Builder(builderClassName = "Builder")
 public class ErrorDto {
-    @NonNull
     private final Integer httpStatus;
-    @NonNull
     @Singular
     private final List<String> messages;
+
+    public ErrorDto(@NonNull Integer httpStatus, @NonNull List<String> messages) {
+        if(isEmpty(messages)) throw new NullPointerException();
+        this.httpStatus = httpStatus;
+        this.messages = messages;
+    }
 }
