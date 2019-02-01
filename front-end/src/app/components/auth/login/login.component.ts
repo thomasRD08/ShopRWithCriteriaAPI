@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.authService.login(this.selectedUser).subscribe((data) => {sessionStorage.setItem(GlobalConstant.USER, JSON.stringify(data))});
+    this.authService.login(this.selectedUser);
     this.router.navigate(['']);
   }
 }

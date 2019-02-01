@@ -19,14 +19,14 @@
   </div>
 
   <div class="right">
-    <button mat-button>Shopping Cart</button>
+    <button *ngIf="user" mat-button>Shopping Cart</button>
 
-    <button mat-button [matMenuTriggerFor]="currentUser">{{user.username}}</button>
+    <button *ngIf="user" mat-button [matMenuTriggerFor]="currentUser">{{user.username}}</button>
     <mat-menu #currentUser="matMenu">
       <button mat-menu-item>Favorites</button>
       <button mat-menu-item (click)="logout()">Log Out</button>
     </mat-menu>
 
-    <button mat-button routerLink="/login" >Log In/ Register</button>
+    <button *ngIf="!user" mat-button routerLink="/login">Log In/ Register</button>
   </div>
 </mat-toolbar>
