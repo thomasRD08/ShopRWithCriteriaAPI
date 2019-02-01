@@ -1,11 +1,10 @@
 package com.realdolmen.backend.controller;
 
 import com.realdolmen.backend.dto.UserDto;
-import com.realdolmen.backend.facade.UserFacade;
+import com.realdolmen.backend.facade.UserFacadeImpl;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,7 +12,13 @@ import java.util.List;
 @RequestMapping("/users")
 @AllArgsConstructor
 public class UserController {
-    private final UserFacade userFacade;
+    private final UserFacadeImpl userFacade;
+
+    @GetMapping(path = "/{username}")
+    @ResponseStatus(HttpStatus.OK)
+    public UserDto getUser(@PathVariable String username) {
+        return userFacade.findUserByUsername(username);
+    }
 
     @GetMapping
     public List<UserDto> findAllUsers() {

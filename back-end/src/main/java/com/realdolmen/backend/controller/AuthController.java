@@ -2,25 +2,28 @@ package com.realdolmen.backend.controller;
 
 import com.realdolmen.backend.domain.User;
 import com.realdolmen.backend.dto.UserDto;
-import com.realdolmen.backend.facade.UserFacade;
+import com.realdolmen.backend.facade.UserFacadeImpl;
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping
 @AllArgsConstructor
 public class AuthController {
-    private final UserFacade userFacade;
+    private final UserFacadeImpl userFacade;
 
-    @GetMapping(path = "/login")
-    public UserDto logInUser(@RequestBody String username) {
-        return userFacade.findUserByUsername(username);
+    @PostMapping(path = "/login")
+    @ResponseStatus(HttpStatus.OK)
+    public UserDto logInUser(@RequestBody UserDto userDto) {
+        return userFacade.findUserByUsername(userDto.getUsername());
     }
 
     @PostMapping(path = "/register")
-    public ResponseEntity<User> registerUser(@RequestBody UserDto userDto) {
-        User user = userFacade.saveUser(userDto);
-        return ResponseEntity.ok(user);
+    @ResponseStatus(HttpStatus.CREATED)
+    public User registerUser(@RequestBody @Valid UserDto userDto) {
+        return userFacade.saveUser(userDto);
     }
 }
