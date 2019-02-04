@@ -18,11 +18,6 @@ public class UserServiceImpl extends CrudServiceImpl<User, Long> implements User
         return userRepository;
     }
 
-    /**
-     *
-     * @param username
-     * @return
-     */
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username)
