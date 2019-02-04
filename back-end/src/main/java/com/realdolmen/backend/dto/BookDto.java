@@ -4,16 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.ISBN;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class BookDto {
-    private String Author;
+    private String title;
 
-    @ISBN
+    private Double price;
+
+    private String type;
+
+    private String author;
+
     private String isbn;
 
     private String pages;

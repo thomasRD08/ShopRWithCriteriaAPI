@@ -1,7 +1,11 @@
 package com.realdolmen.backend.dto;
 
 import com.realdolmen.backend.domain.NonFictionSubject;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.validator.constraints.ISBN;
 
 /**
  * Mapstruct 1.2.0.Final does not support mapping via builders.
@@ -10,9 +14,31 @@ import lombok.*;
  */
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder(builderClassName = "Builder")
 public class NonFictionDto {
+    private String title;
+
+    private Double price;
+
+    private String type;
+
+    private String author;
+
+    @ISBN
+    private String isbn;
+
+    private String pages;
+
     private NonFictionSubject nonFictionSubject;
+
+    @Builder
+    public NonFictionDto(String title, Double price, String type, String author, @ISBN String isbn, String pages, NonFictionSubject nonFictionSubject) {
+        this.title = title;
+        this.price = price;
+        this.type = type;
+        this.author = author;
+        this.isbn = isbn;
+        this.pages = pages;
+        this.nonFictionSubject = nonFictionSubject;
+    }
 }

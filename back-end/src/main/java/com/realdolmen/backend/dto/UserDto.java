@@ -1,7 +1,10 @@
 package com.realdolmen.backend.dto;
 
 import com.realdolmen.backend.constraint.UniqueUser;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Mapstruct 1.2.0.Final does not support mapping via builders.
@@ -10,10 +13,13 @@ import lombok.*;
  */
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder(builderClassName = "Builder")
 public class UserDto {
     @UniqueUser
     private String username;
+
+    @Builder
+    public UserDto(String username) {
+        this.username = username;
+    }
 }

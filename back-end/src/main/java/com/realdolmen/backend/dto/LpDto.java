@@ -1,7 +1,10 @@
 package com.realdolmen.backend.dto;
 
 import com.realdolmen.backend.domain.LpGenre;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Mapstruct 1.2.0.Final does not support mapping via builders.
@@ -10,11 +13,24 @@ import lombok.*;
  */
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder(builderClassName = "Builder")
 public class LpDto {
+    private String title;
+
+    private Double price;
+
+    private String type;
+
     private String artist;
 
     private LpGenre lpGenre;
+
+    @Builder
+    public LpDto(String title, Double price, String type, String artist, LpGenre lpGenre) {
+        this.title = title;
+        this.price = price;
+        this.type = type;
+        this.artist = artist;
+        this.lpGenre = lpGenre;
+    }
 }
