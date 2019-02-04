@@ -4,7 +4,6 @@ import com.realdolmen.backend.advice.exception.NotFoundException;
 import com.realdolmen.backend.domain.User;
 import com.realdolmen.backend.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
