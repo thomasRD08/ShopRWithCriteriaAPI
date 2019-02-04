@@ -1,7 +1,9 @@
 package com.realdolmen.backend.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.Pattern;
@@ -9,6 +11,8 @@ import javax.validation.constraints.Pattern;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public abstract class Book extends Product {
     private String author;
 
