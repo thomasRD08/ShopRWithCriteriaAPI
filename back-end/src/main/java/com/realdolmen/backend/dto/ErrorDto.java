@@ -13,6 +13,7 @@ import static org.springframework.util.CollectionUtils.isEmpty;
 @Builder(builderClassName = "Builder")
 public class ErrorDto {
     private final Integer httpStatus;
+
     @Singular
     private final List<String> messages;
 
