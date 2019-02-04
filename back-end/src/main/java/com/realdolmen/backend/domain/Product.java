@@ -1,27 +1,37 @@
 package com.realdolmen.backend.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 @DiscriminatorColumn(name = "type")
+@Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public abstract class Product extends BaseEntity {
+public abstract class Product {
+    @Id
+    @GeneratedValue
+    protected Long id;
+
+    @Version
+    protected Long version;
+
     private String title;
 
     private Double price;
 
     @Column(name = "type", insertable = false, updatable = false)
     private String type;
+
+    public Product(String title, Double price, String type) {
+        this.title = title;
+        this.price = price;
+        this.type = type;
+    }
 }
 
 
