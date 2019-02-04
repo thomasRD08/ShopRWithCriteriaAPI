@@ -1,15 +1,15 @@
 package com.realdolmen.backend.domain;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 
 @Entity
-@Data
-@EqualsAndHashCode(callSuper = true)
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class Book extends Product {
