@@ -30,8 +30,6 @@ public class UserControllerTest {
                 .build();
     }
 
-
-
     @Test
     public void testShouldFindAllUsers() throws Exception {
         mockMvc.perform(get("/users"))

@@ -7,6 +7,8 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserDtoKarel;
+import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserKarel;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
@@ -17,7 +19,8 @@ public class UserMapperTest {
 
     @Test
     public void testMapperShouldConvertToDto() {
-        User user = new User("Karel");
+        User user = buildUserKarel().build();
+
         UserDto testUserDto = userMapper.userToUserDto(user);
 
         assertEquals(user.getUsername(), testUserDto.getUsername());
@@ -25,7 +28,8 @@ public class UserMapperTest {
 
     @Test
     public void testMapperShouldConvertFromDto() {
-        UserDto userDto = new UserDto("Karel");
+        UserDto userDto = buildUserDtoKarel().build();
+
         User testUser = userMapper.userDtoToUser(userDto);
 
         assertEquals(userDto.getUsername(), testUser.getUsername());

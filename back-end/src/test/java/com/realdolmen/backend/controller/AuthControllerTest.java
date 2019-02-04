@@ -14,6 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserDtoKarel;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -40,18 +41,18 @@ public class AuthControllerTest {
 
     @Test
     public void testShouldLogInUser() throws Exception {
-        String expectedUsername = "Karel";
-        UserDto userDto = new UserDto(expectedUsername);
-        String content = gson.toJson(userDto);
+        UserDto expectedUserDto = buildUserDtoKarel().build();
+        String username = expectedUserDto.getUsername();
+        String content = gson.toJson(expectedUserDto);
 
-        when(userFacade.findUserByUsername(expectedUsername)).thenReturn(userDto);
+        when(userFacade.findUserByUsername(username)).thenReturn(expectedUserDto);
 
         mockMvc.perform(post("/login").content(content).contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(content));
 
-        verify(userFacade, times(1)).findUserByUsername(expectedUsername);
+        verify(userFacade, times(1)).findUserByUsername(username);
     }
 
     //TODO: Convert to TestRestTemplate test

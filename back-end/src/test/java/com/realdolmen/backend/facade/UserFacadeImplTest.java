@@ -11,6 +11,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserDtoKarel;
+import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserKarel;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -31,7 +33,7 @@ public class UserFacadeImplTest {
 
     @Test
     public void testShouldSaveUser() {
-        UserDto userDto = new UserDto();
+        UserDto userDto = buildUserDtoKarel().build();
 
         User user = userFacade.saveUser(userDto);
 
@@ -40,7 +42,7 @@ public class UserFacadeImplTest {
 
     @Test
     public void testShouldFindUserByUsername() {
-        User user = new User("Karel");
+        User user = buildUserKarel().build();
         String username = user.getUsername();
 
         userFacade.findUserByUsername(username);

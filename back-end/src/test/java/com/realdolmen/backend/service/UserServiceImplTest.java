@@ -2,6 +2,7 @@ package com.realdolmen.backend.service;
 
 import com.realdolmen.backend.domain.User;
 import com.realdolmen.backend.repository.UserRepository;
+import com.realdolmen.backend.service.impl.UserServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserGuust;
+import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserKarel;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
@@ -25,7 +28,7 @@ public class UserServiceImplTest {
     @Test
     public void testShouldSaveUser() {
         // create data
-        User expectedUser = new User("Karel");
+        User expectedUser = buildUserKarel().build();
 
         // mock repo
         when(userRepository.save(any())).thenReturn(expectedUser);
@@ -40,7 +43,7 @@ public class UserServiceImplTest {
 
     @Test
     public void testShouldFindUserById() {
-        User expectedUser = new User("Karel");
+        User expectedUser = buildUserKarel().build();
 
         when(userRepository.save(any())).thenReturn(expectedUser);
         when(userRepository.findById(any())).thenReturn(Optional.of(expectedUser));
@@ -55,7 +58,7 @@ public class UserServiceImplTest {
 
     @Test
     public void testShouldFindUserByUsername() {
-        User expectedUser = new User("Karel");
+        User expectedUser = buildUserKarel().build();
 
         when(userRepository.save(any())).thenReturn(expectedUser);
         when(userRepository.findByUsername(any())).thenReturn(Optional.of(expectedUser));
@@ -70,11 +73,11 @@ public class UserServiceImplTest {
 
     @Test
     public void testShouldFindAllUsers() {
-        List<User> users = new ArrayList<>();
-        users.add(new User("Karel"));
-        users.add(new User("Guust"));
+        List<User> expectedUsers = new ArrayList<>();
+        expectedUsers.add(buildUserKarel().build());
+        expectedUsers.add(buildUserGuust().build());
 
-        when(userRepository.findAll()).thenReturn(users);
+        when(userRepository.findAll()).thenReturn(expectedUsers);
 
         List<User> foundUsers = userService.findAll();
 
@@ -84,7 +87,7 @@ public class UserServiceImplTest {
 
     @Test
     public void testShouldDeleteUser() {
-        User user = new User("Karel");
+        User user = buildUserKarel().build();
 
         userService.delete(user);
 
