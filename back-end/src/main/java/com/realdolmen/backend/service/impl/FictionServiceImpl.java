@@ -1,7 +1,8 @@
-package com.realdolmen.backend.service;
+package com.realdolmen.backend.service.impl;
 
 import com.realdolmen.backend.domain.Fiction;
 import com.realdolmen.backend.repository.FictionRepository;
+import com.realdolmen.backend.service.FictionService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;

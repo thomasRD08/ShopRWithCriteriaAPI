@@ -2,7 +2,7 @@ package com.realdolmen.backend.controller;
 
 import com.realdolmen.backend.domain.User;
 import com.realdolmen.backend.dto.UserDto;
-import com.realdolmen.backend.facade.UserFacadeImpl;
+import com.realdolmen.backend.facade.impl.UserFacadeImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

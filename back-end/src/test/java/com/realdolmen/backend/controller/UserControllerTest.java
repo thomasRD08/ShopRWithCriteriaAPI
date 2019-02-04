@@ -1,7 +1,7 @@
 package com.realdolmen.backend.controller;
 
 import com.realdolmen.backend.advice.GlobalExceptionHandler;
-import com.realdolmen.backend.facade.UserFacadeImpl;
+import com.realdolmen.backend.facade.impl.UserFacadeImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

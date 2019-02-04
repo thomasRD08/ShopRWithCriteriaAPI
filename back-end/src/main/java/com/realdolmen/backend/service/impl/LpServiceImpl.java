@@ -1,7 +1,8 @@
-package com.realdolmen.backend.service;
+package com.realdolmen.backend.service.impl;
 
 import com.realdolmen.backend.domain.Lp;
 import com.realdolmen.backend.repository.LpRepository;
+import com.realdolmen.backend.service.LpService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,7 @@
-package com.realdolmen.backend.facade;
+package com.realdolmen.backend.facade.impl;
 
 import com.realdolmen.backend.dto.BookDto;
+import com.realdolmen.backend.facade.BookFacade;
 import com.realdolmen.backend.mapper.BookMapper;
 import com.realdolmen.backend.service.BookService;
 import lombok.AllArgsConstructor;

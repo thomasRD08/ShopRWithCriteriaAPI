@@ -1,7 +1,8 @@
-package com.realdolmen.backend.facade;
+package com.realdolmen.backend.facade.impl;
 
 import com.realdolmen.backend.domain.Game;
 import com.realdolmen.backend.dto.GameDto;
+import com.realdolmen.backend.facade.GameFacade;
 import com.realdolmen.backend.mapper.GameMapper;
 import com.realdolmen.backend.service.GameService;
 import lombok.AllArgsConstructor;

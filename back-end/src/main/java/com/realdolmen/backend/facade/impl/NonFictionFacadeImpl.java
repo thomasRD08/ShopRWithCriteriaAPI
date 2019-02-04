@@ -1,7 +1,8 @@
-package com.realdolmen.backend.facade;
+package com.realdolmen.backend.facade.impl;
 
 import com.realdolmen.backend.domain.NonFiction;
 import com.realdolmen.backend.dto.NonFictionDto;
+import com.realdolmen.backend.facade.NonFictionFacade;
 import com.realdolmen.backend.mapper.NonFictionMapper;
 import com.realdolmen.backend.service.NonFictionService;
 import lombok.AllArgsConstructor;

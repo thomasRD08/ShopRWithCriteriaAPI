@@ -1,6 +1,7 @@
-package com.realdolmen.backend.service;
+package com.realdolmen.backend.service.impl;
 
 import com.realdolmen.backend.advice.exception.NotFoundException;
+import com.realdolmen.backend.service.CrudService;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.lang.reflect.ParameterizedType;

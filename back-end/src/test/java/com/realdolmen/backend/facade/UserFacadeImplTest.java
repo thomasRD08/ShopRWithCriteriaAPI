@@ -2,6 +2,7 @@ package com.realdolmen.backend.facade;
 
 import com.realdolmen.backend.domain.User;
 import com.realdolmen.backend.dto.UserDto;
+import com.realdolmen.backend.facade.impl.UserFacadeImpl;
 import com.realdolmen.backend.mapper.UserMapperImpl;
 import com.realdolmen.backend.service.UserService;
 import org.junit.Test;
