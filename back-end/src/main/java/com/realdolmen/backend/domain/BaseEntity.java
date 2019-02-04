@@ -1,6 +1,6 @@
 package com.realdolmen.backend.domain;
 
-import lombok.Data;
+import lombok.Getter;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,7 +8,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
 @MappedSuperclass
-@Data
+@Getter
 public abstract class BaseEntity {
     @Id
     @GeneratedValue
