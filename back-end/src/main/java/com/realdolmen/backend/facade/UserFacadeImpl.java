@@ -18,21 +18,21 @@ public class UserFacadeImpl implements UserFacade {
 
     @Override
     public User saveUser(UserDto userDto) {
-        User user = userMapper.UserDtoToUser(userDto);
+        User user = userMapper.userDtoToUser(userDto);
         return userService.save(user);
     }
 
     @Override
     public UserDto findUserByUsername(String username) {
         User user = userService.findByUsername(username);
-        return userMapper.UserToUserDto(user);
+        return userMapper.userToUserDto(user);
     }
 
     @Override
     public List<UserDto> findAllUsers() {
         return userService.findAll()
                 .stream()
-                .map(userMapper::UserToUserDto)
+                .map(userMapper::userToUserDto)
                 .collect(Collectors.toList());
     }
 }
