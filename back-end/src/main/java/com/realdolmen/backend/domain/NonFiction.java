@@ -1,6 +1,9 @@
 package com.realdolmen.backend.domain;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -13,11 +16,15 @@ import javax.persistence.*;
 @DiscriminatorValue("Non-fiction")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder(builderClassName = "Builder")
 public class NonFiction extends Book {
     @Enumerated(EnumType.STRING)
     @Column(name = "nonfiction_subject")
     private NonFictionSubject nonFictionSubject;
+
+    @Builder
+    public NonFiction(String title, Double price, String type, String author, String isbn, String pages, NonFictionSubject nonFictionSubject) {
+        super(title, price, type, author, isbn, pages);
+        this.nonFictionSubject = nonFictionSubject;
+    }
 }

@@ -1,6 +1,9 @@
 package com.realdolmen.backend.domain;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -13,13 +16,18 @@ import javax.persistence.*;
 @DiscriminatorValue("Lp")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder(builderClassName = "Builder")
 public class Lp extends Product {
     private String artist;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "lp_genre")
     private LpGenre lpGenre;
+
+    @Builder
+    public Lp(String title, Double price, String type, String artist, LpGenre lpGenre) {
+        super(title, price, type);
+        this.artist = artist;
+        this.lpGenre = lpGenre;
+    }
 }
