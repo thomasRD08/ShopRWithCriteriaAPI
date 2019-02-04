@@ -14,7 +14,7 @@ public class ErrorDtoTest {
     public void testSuccess() {
         ErrorDto.builder()
                 .httpStatus(404)
-                .message("test")
+                .message("Test")
                 .build();
     }
 
@@ -32,7 +32,7 @@ public class ErrorDtoTest {
         expectedException.expect(NullPointerException.class);
 
         ErrorDto.builder()
-                .message("test")
+                .message("Test")
                 .build();
     }
 }
