@@ -1,10 +1,9 @@
-package com.realdolmen.backend.service;
+package com.realdolmen.backend.service.impl;
 
 import com.realdolmen.backend.domain.Game;
 import com.realdolmen.backend.domain.Lp;
 import com.realdolmen.backend.domain.Product;
 import com.realdolmen.backend.repository.ProductRepository;
-import com.realdolmen.backend.service.impl.ProductServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

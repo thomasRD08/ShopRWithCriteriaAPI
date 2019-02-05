@@ -1,8 +1,7 @@
-package com.realdolmen.backend.service;
+package com.realdolmen.backend.service.impl;
 
 import com.realdolmen.backend.domain.User;
 import com.realdolmen.backend.repository.UserRepository;
-import com.realdolmen.backend.service.impl.UserServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

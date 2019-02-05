@@ -1,10 +1,9 @@
-package com.realdolmen.backend.service;
+package com.realdolmen.backend.service.impl;
 
 import com.realdolmen.backend.domain.Book;
 import com.realdolmen.backend.domain.Fiction;
 import com.realdolmen.backend.domain.NonFiction;
 import com.realdolmen.backend.repository.BookRepository;
-import com.realdolmen.backend.service.impl.BookServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
