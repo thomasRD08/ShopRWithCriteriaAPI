@@ -23,11 +23,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(MockitoJUnitRunner.class)
 public class AuthControllerTest {
-    @Mock
-    private UserFacadeImpl userFacade;
-
     @InjectMocks
     private AuthController authController;
+    @Mock
+    private UserFacadeImpl userFacade;
     private MockMvc mockMvc;
     private Gson gson;
 

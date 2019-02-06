@@ -17,10 +17,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserControllerTest {
-    @Mock
-    private UserFacadeImpl userFacade;
     @InjectMocks
     private UserController userController;
+    @Mock
+    private UserFacadeImpl userFacade;
     private MockMvc mockMvc;
 
     @Before
@@ -31,7 +31,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void testShouldFindAllUsers() throws Exception {
+    public void testShouldGetAllUsers() throws Exception {
         mockMvc.perform(get("/users"))
                 .andDo(print())
                 .andExpect(status().isOk());
