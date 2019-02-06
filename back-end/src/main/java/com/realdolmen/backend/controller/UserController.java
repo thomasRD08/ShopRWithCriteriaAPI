@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @GetMapping
-    public List<UserDto> findAllUsers() {
+    public List<UserDto> getAllUsers() {
         return userFacade.findAllUsers();
     }
 }
