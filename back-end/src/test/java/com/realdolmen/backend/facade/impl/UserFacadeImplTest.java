@@ -18,12 +18,12 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserFacadeImplTest {
+    @InjectMocks
+    private UserFacadeImpl userFacade;
     @Mock
     private UserMapperImpl userMapper;
     @Mock
     private UserService userService;
-    @InjectMocks
-    private UserFacadeImpl userFacade;
 
     @Test
     public void testShouldMockFacade() {
