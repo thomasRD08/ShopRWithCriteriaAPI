@@ -16,7 +16,7 @@ public class UserController {
 
     @GetMapping(path = "/{username}")
     @ResponseStatus(HttpStatus.OK)
-    public UserDto getUser(@PathVariable String username) {
+    public UserDto getUserByUsername(@PathVariable String username) {
         return userFacade.findUserByUsername(username);
     }
 
