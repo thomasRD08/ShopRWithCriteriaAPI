@@ -3,7 +3,6 @@ import {User} from "../../../models/user";
 import {UserService} from "../../../services/user.service";
 import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
-import {GlobalConstant} from "../../shared/global-constant";
 
 @Component({
   selector: 'app-login',
