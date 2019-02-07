@@ -10,10 +10,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema shopr
 -- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema shopr
--- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `shopr` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
 USE `shopr` ;
 
@@ -134,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `shopr`.`product` (
 -- Table `shopr`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `shopr`.`user` (
-  `id` BIGINT(20) NOT NULL,
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(255) NULL DEFAULT NULL,
   `version` BIGINT(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
