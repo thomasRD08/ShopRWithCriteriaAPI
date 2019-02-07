@@ -14,7 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public abstract class Product {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
 
     @Version
