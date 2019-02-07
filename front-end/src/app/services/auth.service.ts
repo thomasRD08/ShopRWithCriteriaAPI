@@ -15,13 +15,13 @@ export class AuthService {
 
   login(user: User): void {
     this.http.post<User>('/api/login', user).subscribe((user) => {
-      sessionStorage.setItem(GlobalConstant.USER, JSON.stringify(user));
+      localStorage.setItem(GlobalConstant.USER, JSON.stringify(user));
       this.userSubject.next();
     });
   }
 
   logout(): void {
-    sessionStorage.clear();
+    localStorage.clear();
     this.userSubject.next();
   }
 
@@ -30,6 +30,6 @@ export class AuthService {
   }
 
   getCurrentUser(): User {
-    return JSON.parse(sessionStorage.getItem(GlobalConstant.USER));
+    return JSON.parse(localStorage.getItem(GlobalConstant.USER));
   }
 }
