@@ -10,14 +10,17 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity handleException(Exception e) {
+        return buildResponseEntity("Something unexpected went wrong", HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity handleNotFoundException(NotFoundException e) {
         return buildResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
@@ -36,9 +39,9 @@ public class GlobalExceptionHandler {
         return buildResponseEntity(messages, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity handleException(Exception e) {
-        return buildResponseEntity("Something unexpected went wrong", HttpStatus.INTERNAL_SERVER_ERROR);
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorDto> handleIllegalArgumentException(IllegalArgumentException e) {
+        return buildResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
     private ResponseEntity<ErrorDto> buildResponseEntity(String message, HttpStatus httpStatus) {
