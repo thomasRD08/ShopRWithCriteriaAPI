@@ -1,6 +1,5 @@
 package com.realdolmen.backend.facade.impl;
 
-import com.realdolmen.backend.mapper.ProductMapperImpl;
 import com.realdolmen.backend.service.ProductService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,8 +15,6 @@ import static org.mockito.Mockito.verify;
 public class ProductFacadeImplTest {
     @InjectMocks
     private ProductFacadeImpl productFacade;
-    @Mock
-    private ProductMapperImpl productMapper;
     @Mock
     private ProductService productService;
 

@@ -1,6 +1,5 @@
 package com.realdolmen.backend.facade.impl;
 
-import com.realdolmen.backend.mapper.BookMapperImpl;
 import com.realdolmen.backend.service.BookService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,8 +15,6 @@ import static org.mockito.Mockito.verify;
 public class BookFacadeImplTest {
     @InjectMocks
     private BookFacadeImpl bookFacade;
-    @Mock
-    private BookMapperImpl bookMapper;
     @Mock
     private BookService bookService;
 

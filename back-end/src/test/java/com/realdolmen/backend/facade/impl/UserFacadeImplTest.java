@@ -2,7 +2,6 @@ package com.realdolmen.backend.facade.impl;
 
 import com.realdolmen.backend.domain.User;
 import com.realdolmen.backend.dto.UserDto;
-import com.realdolmen.backend.mapper.UserMapperImpl;
 import com.realdolmen.backend.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,8 +19,6 @@ import static org.mockito.Mockito.verify;
 public class UserFacadeImplTest {
     @InjectMocks
     private UserFacadeImpl userFacade;
-    @Mock
-    private UserMapperImpl userMapper;
     @Mock
     private UserService userService;
 
