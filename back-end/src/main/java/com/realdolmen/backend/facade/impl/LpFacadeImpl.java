@@ -18,13 +18,12 @@ public class LpFacadeImpl implements LpFacade {
     private final LpService lpService;
 
     @Override
-    public Lp saveLp(LpDto lpDto) {
-        Lp lp = lpMapper.lpDtoToLp(lpDto);
-        return lpService.save(lp);
+    public LpDto saveLp(final LpDto lpDto) {
+        return save(lpDto, new Lp());
     }
 
     @Override
-    public LpDto findLpById(Long id) {
+    public LpDto findLpById(final Long id) {
         Lp lp = lpService.findById(id);
         return lpMapper.lpToLpDto(lp);
     }
@@ -38,8 +37,20 @@ public class LpFacadeImpl implements LpFacade {
     }
 
     @Override
-    public void deleteLp(LpDto lpDto) {
-        Lp lp = lpMapper.lpDtoToLp(lpDto);
+    public LpDto updateLp(final LpDto lpDto) {
+        Lp lp = lpService.findById(lpDto.getId());
+        return save(lpDto, lp);
+    }
+
+    @Override
+    public void deleteLp(final Long id) {
+        Lp lp = lpService.findById(id);
         lpService.delete(lp);
+    }
+
+    private LpDto save(LpDto lpDto, Lp lp) {
+        lpMapper.lpDtoToLp(lpDto, lp);
+        lp = lpService.save(lp);
+        return lpMapper.lpToLpDto(lp);
     }
 }

@@ -18,13 +18,12 @@ public class GameFacadeImpl implements GameFacade {
     private final GameService gameService;
 
     @Override
-    public Game saveGame(GameDto gameDto) {
-        Game game = gameMapper.gameDtoToGame(gameDto);
-        return gameService.save(game);
+    public GameDto saveGame(final GameDto gameDto) {
+        return save(gameDto, new Game());
     }
 
     @Override
-    public GameDto findGameById(Long id) {
+    public GameDto findGameById(final Long id) {
         Game game = gameService.findById(id);
         return gameMapper.gameToGameDto(game);
     }
@@ -38,8 +37,20 @@ public class GameFacadeImpl implements GameFacade {
     }
 
     @Override
-    public void deleteGame(GameDto gameDto) {
-        Game game = gameMapper.gameDtoToGame(gameDto);
+    public GameDto updateGame(final GameDto gameDto) {
+        Game game = gameService.findById(gameDto.getId());
+        return save(gameDto, game);
+    }
+
+    @Override
+    public void deleteGame(final Long id) {
+        Game game = gameService.findById(id);
         gameService.delete(game);
+    }
+
+    private GameDto save(GameDto gameDto, Game game) {
+        gameMapper.gameDtoToGame(gameDto, game);
+        game = gameService.save(game);
+        return gameMapper.gameToGameDto(game);
     }
 }

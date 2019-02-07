@@ -18,13 +18,12 @@ public class NonFictionFacadeImpl implements NonFictionFacade {
     private final NonFictionService nonFictionService;
 
     @Override
-    public NonFiction saveNonFiction(NonFictionDto nonFictionDto) {
-        NonFiction nonFiction = nonFictionMapper.nonFictionDtoToNonFiction(nonFictionDto);
-        return nonFictionService.save(nonFiction);
+    public NonFictionDto saveNonFiction(final NonFictionDto nonFictionDto) {
+        return save(nonFictionDto, new NonFiction());
     }
 
     @Override
-    public NonFictionDto findNonFictionById(Long id) {
+    public NonFictionDto findNonFictionById(final Long id) {
         NonFiction nonFiction = nonFictionService.findById(id);
         return nonFictionMapper.nonFictionToNonFictionDto(nonFiction);
     }
@@ -38,8 +37,20 @@ public class NonFictionFacadeImpl implements NonFictionFacade {
     }
 
     @Override
-    public void deleteNonFiction(NonFictionDto nonFictionDto) {
-        NonFiction nonFiction = nonFictionMapper.nonFictionDtoToNonFiction(nonFictionDto);
+    public NonFictionDto updateNonFiction(final NonFictionDto nonFictionDto) {
+        NonFiction nonFiction = nonFictionService.findById(nonFictionDto.getId());
+        return save(nonFictionDto, nonFiction);
+    }
+
+    @Override
+    public void deleteNonFiction(final Long id) {
+        NonFiction nonFiction = nonFictionService.findById(id);
         nonFictionService.delete(nonFiction);
+    }
+
+    private NonFictionDto save(NonFictionDto nonFictionDto, NonFiction nonFiction) {
+        nonFictionMapper.nonFictionDtoToNonFiction(nonFictionDto, nonFiction);
+        nonFiction = nonFictionService.save(nonFiction);
+        return nonFictionMapper.nonFictionToNonFictionDto(nonFiction);
     }
 }

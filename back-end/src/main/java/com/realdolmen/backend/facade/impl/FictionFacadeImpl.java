@@ -18,13 +18,12 @@ public class FictionFacadeImpl implements FictionFacade {
     private final FictionService fictionService;
 
     @Override
-    public Fiction saveFiction(FictionDto fictionDto) {
-        Fiction fiction = fictionMapper.fictionDtoToFiction(fictionDto);
-        return fictionService.save(fiction);
+    public FictionDto saveFiction(final FictionDto fictionDto) {
+        return save(fictionDto, new Fiction());
     }
 
     @Override
-    public FictionDto findFictionById(Long id) {
+    public FictionDto findFictionById(final Long id) {
         Fiction fiction = fictionService.findById(id);
         return fictionMapper.fictionToFictionDto(fiction);
     }
@@ -38,8 +37,20 @@ public class FictionFacadeImpl implements FictionFacade {
     }
 
     @Override
-    public void deleteFiction(FictionDto fictionDto) {
-        Fiction fiction = fictionMapper.fictionDtoToFiction(fictionDto);
+    public FictionDto updateFiction(final FictionDto fictionDto) {
+        Fiction fiction = fictionService.findById(fictionDto.getId());
+        return save(fictionDto, fiction);
+    }
+
+    @Override
+    public void deleteFiction(final Long id) {
+        Fiction fiction = fictionService.findById(id);
         fictionService.delete(fiction);
+    }
+
+    private FictionDto save(FictionDto fictionDto, Fiction fiction) {
+        fictionMapper.fictionDtoToFiction(fictionDto, fiction);
+        fiction= fictionService.save(fiction);
+        return fictionMapper.fictionToFictionDto(fiction);
     }
 }
