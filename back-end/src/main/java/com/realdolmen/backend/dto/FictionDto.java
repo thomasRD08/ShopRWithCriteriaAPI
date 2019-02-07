@@ -16,6 +16,8 @@ import org.hibernate.validator.constraints.ISBN;
 @Setter
 @NoArgsConstructor
 public class FictionDto {
+    private Long id;
+
     private String title;
 
     private Double price;

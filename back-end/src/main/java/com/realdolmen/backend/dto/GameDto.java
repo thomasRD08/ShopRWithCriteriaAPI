@@ -15,6 +15,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class GameDto {
+    private Long id;
+
     private String title;
 
     private Double price;
