@@ -7,6 +7,7 @@ import {SharedModule} from "./modules/shared/shared.module";
 import {AuthModule} from "./modules/auth/auth.module";
 import {OverviewProductModule} from "./modules/overview-product/overview-product.module";
 import {CreateProductModule} from "./modules/create-product/create-product.module";
+import {DetailProductModule} from "./modules/detail-product/detail-product.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {CreateProductModule} from "./modules/create-product/create-product.modul
     SharedModule,
     AuthModule,
     OverviewProductModule,
-    CreateProductModule
+    CreateProductModule,
+    DetailProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]
