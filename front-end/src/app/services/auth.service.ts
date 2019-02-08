@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {User} from "../models/user";
 import {Observable, Subject} from "rxjs";
-import {GlobalConstant} from "../components/shared/global-constant";
+import {GlobalConstant} from "../modules/shared/global-constant";
 
 @Injectable({
   providedIn: 'root'

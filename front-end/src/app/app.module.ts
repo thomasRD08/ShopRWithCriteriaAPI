@@ -3,10 +3,10 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {SharedModule} from "./components/shared/shared.module";
-import {AuthModule} from "./components/auth/auth.module";
-import {OverviewModule} from "./components/overview/overview.module";
-import {CreateProductModule} from "./components/create-product/create-product.module";
+import {SharedModule} from "./modules/shared/shared.module";
+import {AuthModule} from "./modules/auth/auth.module";
+import {OverviewProductModule} from "./modules/overview-product/overview-product.module";
+import {CreateProductModule} from "./modules/create-product/create-product.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import {CreateProductModule} from "./components/create-product/create-product.mo
     AppRoutingModule,
     SharedModule,
     AuthModule,
-    OverviewModule,
+    OverviewProductModule,
     CreateProductModule
   ],
   providers: [],

@@ -44,5 +44,5 @@ import {NonFictionComponent} from './non-fiction/non-fiction.component';
     NonFictionService
   ]
 })
-export class OverviewModule {
+export class OverviewProductModule {
 }
