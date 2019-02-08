@@ -8,16 +8,24 @@ import {FictionComponent} from "./components/overview/fiction/fiction.component"
 import {NonFictionComponent} from "./components/overview/non-fiction/non-fiction.component";
 import {LpsComponent} from "./components/overview/lps/lps.component";
 import {GamesComponent} from "./components/overview/games/games.component";
+import {CreateLpComponent} from "./components/create-product/create-lp/create-lp.component";
+import {CreateGameComponent} from "./components/create-product/create-game/create-game.component";
+import {CreateFictionComponent} from "./components/create-product/create-fiction/create-fiction.component";
+import {CreateNonFictionComponent} from "./components/create-product/create-non-fiction/create-non-fiction.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'products', component: ProductsComponent},
-  {path: 'products/books', component: BooksComponent},
-  {path: 'products/books/fiction', component: FictionComponent},
-  {path: 'products/books/non-fiction', component: NonFictionComponent},
-  {path: 'products/lps', component: LpsComponent},
-  {path: 'products/games', component: GamesComponent}
+  {path: 'overview/products', component: ProductsComponent},
+  {path: 'overview/products/lps', component: LpsComponent},
+  {path: 'overview/products/games', component: GamesComponent},
+  {path: 'overview/products/books', component: BooksComponent},
+  {path: 'overview/products/books/fiction', component: FictionComponent},
+  {path: 'overview/products/books/non-fiction', component: NonFictionComponent},
+  {path: 'create/products/lp', component: CreateLpComponent},
+  {path: 'create/products/game', component: CreateGameComponent},
+  {path: 'create/products/fiction', component: CreateFictionComponent},
+  {path: 'create/products/non-fiction', component: CreateNonFictionComponent}
 ];
 
 @NgModule({

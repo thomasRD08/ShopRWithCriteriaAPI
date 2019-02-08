@@ -4,19 +4,20 @@
   <div class="left">
     <button mat-button [matMenuTriggerFor]="overview">Overview</button>
     <mat-menu #overview="matMenu">
-      <button mat-menu-item routerLink="/products">Products</button>
-      <button mat-menu-item routerLink="/products/lps">Lps</button>
-      <button mat-menu-item routerLink="/products/games">Games</button>
-      <button mat-menu-item routerLink="/products/books">Books</button>
-      <button mat-menu-item routerLink="/products/books/fiction">Fiction</button>
-      <button mat-menu-item routerLink="/products/books/non-fiction">Non-fiction</button>
+      <button mat-menu-item routerLink="overview/products">Products</button>
+      <button mat-menu-item routerLink="overview/products/lps">Lps</button>
+      <button mat-menu-item routerLink="overview/products/games">Games</button>
+      <button mat-menu-item routerLink="overview/products/books">Books</button>
+      <button mat-menu-item routerLink="overview/products/books/fiction">Fiction</button>
+      <button mat-menu-item routerLink="overview/products/books/non-fiction">Non-fiction</button>
     </mat-menu>
 
     <button mat-button [matMenuTriggerFor]="addProduct">Add Products</button>
     <mat-menu #addProduct="matMenu">
-      <button mat-menu-item>Add Book</button>
-      <button mat-menu-item>Add Game</button>
-      <button mat-menu-item>Add Lp</button>
+      <button mat-menu-item routerLink="create/products/lp">Add Lp</button>
+      <button mat-menu-item routerLink="create/products/game">Add Game</button>
+      <button mat-menu-item routerLink="create/products/fiction">Add Fiction</button>
+      <button mat-menu-item routerLink="create/products/non-fiction">Add Non-fiction</button>
     </mat-menu>
   </div>
 
