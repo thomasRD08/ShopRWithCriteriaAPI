@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/books/fiction")
+@RequestMapping("/products/books/fiction")
 @AllArgsConstructor
 public class FictionController {
     private final FictionFacadeImpl fictionFacade;

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/games")
+@RequestMapping("/products/games")
 @AllArgsConstructor
 public class GameController {
     private final GameFacadeImpl gameFacade;
@@ -32,7 +32,7 @@ public class GameController {
         return gameFacade.findAllGames();
     }
 
-    @PutMapping
+    @PutMapping(path = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public GameDto updateGame(@PathVariable Long id, @RequestBody GameDto gameDto) {
         if (!id.equals(gameDto.getId())) {

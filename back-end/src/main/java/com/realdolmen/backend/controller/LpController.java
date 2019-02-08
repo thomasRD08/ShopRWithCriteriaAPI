@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/lps")
+@RequestMapping("/products/lps")
 @AllArgsConstructor
 public class LpController {
     private final LpFacadeImpl lpFacade;

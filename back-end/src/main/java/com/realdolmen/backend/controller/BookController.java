@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/books")
+@RequestMapping("/products/books")
 @AllArgsConstructor
 public class BookController {
     private final BookFacadeImpl bookFacade;
