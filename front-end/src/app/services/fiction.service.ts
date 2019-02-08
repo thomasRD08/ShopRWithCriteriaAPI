@@ -10,6 +10,10 @@ export class FictionService {
   constructor(private http: HttpClient) {
   }
 
+  createFiction(fiction: Fiction): Observable<Fiction> {
+    return this.http.post<Fiction>('/api/products/books/fiction', fiction);
+  }
+
   getFiction(): Observable<Fiction[]> {
     return this.http.get<Fiction[]>('/api/products/books/fiction')
   }

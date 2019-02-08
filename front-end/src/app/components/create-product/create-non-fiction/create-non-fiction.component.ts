@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {NonFiction} from "../../../models/non-fiction";
+import {NonFictionService} from "../../../services/non-fiction.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-non-fiction',
@@ -6,10 +9,14 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./create-non-fiction.component.scss']
 })
 export class CreateNonFictionComponent implements OnInit {
+  nonFiction: NonFiction = new NonFiction();
 
-  constructor() { }
+  constructor(private nonFictionService: NonFictionService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  createNonFiction() {
+    this.nonFictionService.createNonFiction(this.nonFiction).subscribe(() => this.router.navigate(['/overview/products/books/non-fiction']))
+  }
 }

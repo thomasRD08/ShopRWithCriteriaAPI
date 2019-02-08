@@ -1,3 +1,22 @@
-<p>
-  create-non-fiction works!
-</p>
+<mat-card>
+  <mat-card-title>Create Non-fiction</mat-card-title>
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="nonFiction.title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Author" [(ngModel)]="nonFiction.author">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="ISBN" [(ngModel)]="nonFiction.isbn">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Pages" [(ngModel)]="nonFiction.pages">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Subject" [(ngModel)]="nonFiction.nonFictionSubject">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Price" [(ngModel)]="nonFiction.price">
+  </mat-form-field>
+  <button mat-button (click)="createNonFiction()">Confirm</button>
+</mat-card>

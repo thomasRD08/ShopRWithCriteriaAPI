@@ -1,3 +1,19 @@
-<p>
-  create-game works!
-</p>
+<mat-card>
+  <mat-card-title>Create Game</mat-card-title>
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="game.title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Publisher" [(ngModel)]="game.publisher">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Minimum age" [(ngModel)]="game.minAge">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Genre" [(ngModel)]="game.gameGenre">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Price" [(ngModel)]="game.price">
+  </mat-form-field>
+  <button mat-button (click)="createGame()">Confirm</button>
+</mat-card>

@@ -1,3 +1,25 @@
-<p>
-  create-fiction works!
-</p>
+<mat-card>
+  <mat-card-title>Create Fiction</mat-card-title>
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="fiction.title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Author" [(ngModel)]="fiction.author">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="ISBN" [(ngModel)]="fiction.isbn">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Pages" [(ngModel)]="fiction.pages">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Genre" [(ngModel)]="fiction.fictionGenre">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Summary" [(ngModel)]="fiction.summary">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Price" [(ngModel)]="fiction.price">
+  </mat-form-field>
+  <button mat-button (click)="createFiction()">Confirm</button>
+</mat-card>

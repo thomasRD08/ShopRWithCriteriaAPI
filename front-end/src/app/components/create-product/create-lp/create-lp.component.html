@@ -1,3 +1,16 @@
-<p>
-  create-lp works!
-</p>
+<mat-card>
+  <mat-card-title>Create Lp</mat-card-title>
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="lp.title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Artist" [(ngModel)]="lp.artist">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Genre" [(ngModel)]="lp.lpGenre">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Price" [(ngModel)]="lp.price">
+  </mat-form-field>
+  <button mat-button (click)="createLp()">Confirm</button>
+</mat-card>
