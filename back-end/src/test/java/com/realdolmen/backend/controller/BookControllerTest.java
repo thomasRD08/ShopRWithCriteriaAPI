@@ -32,7 +32,7 @@ public class BookControllerTest {
 
     @Test
     public void testShouldGetAllBooks() throws Exception {
-        mockMvc.perform(get("/books"))
+        mockMvc.perform(get("/products/books"))
                 .andDo(print())
                 .andExpect(status().isOk());
     }
