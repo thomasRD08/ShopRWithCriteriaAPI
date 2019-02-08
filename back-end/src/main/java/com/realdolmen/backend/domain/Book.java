@@ -12,9 +12,7 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 public abstract class Book extends Product {
     private String author;
-
     private String isbn;
-
     private String pages;
 
     public Book(String title, Double price, String type, String author, String isbn, String pages) {

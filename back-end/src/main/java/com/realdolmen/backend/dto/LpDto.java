@@ -16,15 +16,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class LpDto {
     private Long id;
-
     private String title;
-
     private Double price;
-
     private String type;
-
     private String artist;
-
     private LpGenre lpGenre;
 
     @Builder

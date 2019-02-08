@@ -16,17 +16,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class GameDto {
     private Long id;
-
     private String title;
-
     private Double price;
-
     private String type;
-
     private String publisher;
-
     private Integer minAge;
-
     private GameGenre gameGenre;
 
     @Builder

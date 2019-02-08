@@ -20,10 +20,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
-
     @Version
     protected Long version;
-
     private String username;
 
     @Builder

@@ -17,20 +17,13 @@ import org.hibernate.validator.constraints.ISBN;
 @NoArgsConstructor
 public class NonFictionDto {
     private Long id;
-
     private String title;
-
     private Double price;
-
     private String type;
-
     private String author;
-
     @ISBN
     private String isbn;
-
     private String pages;
-
     private NonFictionSubject nonFictionSubject;
 
     @Builder

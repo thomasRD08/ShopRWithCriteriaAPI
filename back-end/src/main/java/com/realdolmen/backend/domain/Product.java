@@ -16,14 +16,10 @@ public abstract class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
-
     @Version
     protected Long version;
-
     private String title;
-
     private Double price;
-
     @Column(name = "type", insertable = false, updatable = false)
     private String type;
 

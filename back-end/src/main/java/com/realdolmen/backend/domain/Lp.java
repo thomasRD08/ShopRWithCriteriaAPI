@@ -19,7 +19,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Lp extends Product {
     private String artist;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "lp_genre")
     private LpGenre lpGenre;
