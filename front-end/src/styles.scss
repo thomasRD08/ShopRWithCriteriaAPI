@@ -13,7 +13,11 @@ html {
 
 body {
   min-height: 100vh;
-  //background-color: $neutral;
   background-image: url(/assets/shockr-retro.jpg);
   background-repeat: repeat;
+}
+
+.content {
+  width: 70%;
+  margin-left: 15%;
 }
