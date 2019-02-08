@@ -2,8 +2,10 @@
 
 .mat-toolbar {
   background-color: $neutral;
-  margin-top: 8px;
   color: $fontColor;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 .mat-button {
