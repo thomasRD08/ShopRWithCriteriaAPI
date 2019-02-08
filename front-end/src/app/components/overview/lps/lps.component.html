@@ -1,0 +1,24 @@
+<table mat-table [dataSource]="lps" class="mat-elevation-z8">
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef>Title</th>
+    <td mat-cell *matCellDef="let lp">{{lp.title}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="artist">
+    <th mat-header-cell *matHeaderCellDef>Artist</th>
+    <td mat-cell *matCellDef="let lp">{{lp.artist}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="lpGenre">
+    <th mat-header-cell *matHeaderCellDef>Genre</th>
+    <td mat-cell *matCellDef="let lp">{{lp.lpGenre}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>Price</th>
+    <td mat-cell *matCellDef="let lp">{{lp.price}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
