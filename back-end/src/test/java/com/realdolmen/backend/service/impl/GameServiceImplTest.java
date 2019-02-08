@@ -66,6 +66,7 @@ public class GameServiceImplTest {
         assertEquals(2, foundGames.size());
     }
 
+    //    TODO: Edit test
     @Test
     public void delete() {
         Game game = buildGameArtifact().build();

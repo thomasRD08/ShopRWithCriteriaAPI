@@ -66,6 +66,7 @@ public class FictionServiceImplTest {
         assertEquals(2, foundFiction.size());
     }
 
+//    TODO: Edit test
     @Test
     public void testShouldDeleteFiction() {
         Fiction fiction = buildFictionTheHelp().build();

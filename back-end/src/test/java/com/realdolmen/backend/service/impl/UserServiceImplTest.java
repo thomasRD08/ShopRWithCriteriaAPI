@@ -84,6 +84,7 @@ public class UserServiceImplTest {
         assertEquals(2, foundUsers.size());
     }
 
+    //    TODO: Edit test
     @Test
     public void testShouldDeleteUser() {
         User user = buildUserKarel().build();

@@ -70,6 +70,8 @@ public class LpServiceImplTest {
     public void testShouldDeleteLp() {
         Lp lp = buildLpParanoid().build();
 
+        doNothing().when(lpRepository).delete(lp);
+
         lpService.delete(lp);
 
         verify(lpRepository, times(1)).delete(lp);
