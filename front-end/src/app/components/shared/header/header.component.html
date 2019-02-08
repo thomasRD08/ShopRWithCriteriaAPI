@@ -5,9 +5,11 @@
     <button mat-button [matMenuTriggerFor]="overview">Overview</button>
     <mat-menu #overview="matMenu">
       <button mat-menu-item routerLink="/products">Products</button>
-      <button mat-menu-item>Books</button>
-      <button mat-menu-item>Games</button>
-      <button mat-menu-item>Lps</button>
+      <button mat-menu-item routerLink="/products/lps">Lps</button>
+      <button mat-menu-item routerLink="/products/games">Games</button>
+      <button mat-menu-item routerLink="/products/books">Books</button>
+      <button mat-menu-item routerLink="/products/books/fiction">Fiction</button>
+      <button mat-menu-item routerLink="/products/books/non-fiction">Non-fiction</button>
     </mat-menu>
 
     <button mat-button [matMenuTriggerFor]="addProduct">Add Products</button>
