@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GameService} from "../../../services/game.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Game} from "../../../models/game";
 
 @Component({
@@ -10,14 +10,19 @@ import {Game} from "../../../models/game";
 })
 export class DetailGameComponent implements OnInit {
   game: Game;
+  id: number;
 
-  constructor(private gameService: GameService, private route: ActivatedRoute) { }
+  constructor(private gameService: GameService, private route: ActivatedRoute, private router: Router) {
+  }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      const id = params['id'];
-      this.gameService.getGameById(id).subscribe(data => this.game = data);
+      this.id = params['id'];
+      this.gameService.getGameById(this.id).subscribe(data => this.game = data);
     })
   }
 
+  delete() {
+    this.gameService.deleteGameById(this.id).subscribe(() => this.router.navigate(['/products/game']))
+  }
 }

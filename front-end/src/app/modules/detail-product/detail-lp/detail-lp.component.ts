@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Lp} from "../../../models/lp";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {LpService} from "../../../services/lp.service";
 
 @Component({
@@ -10,13 +10,19 @@ import {LpService} from "../../../services/lp.service";
 })
 export class DetailLpComponent implements OnInit {
   lp: Lp;
+  id: number;
 
-  constructor(private lpService: LpService, private route: ActivatedRoute) { }
+  constructor(private lpService: LpService, private route: ActivatedRoute, private router: Router) {
+  }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      const id = params['id'];
-      this.lpService.getLpById(id).subscribe(data => this.lp = data);
+      this.id = params['id'];
+      this.lpService.getLpById(this.id).subscribe(data => this.lp = data);
     })
+  }
+
+  delete() {
+    this.lpService.deleteLpById(this.id).subscribe(() => this.router.navigate(['/products/lp']));
   }
 }

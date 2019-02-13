@@ -21,4 +21,8 @@ export class FictionService {
   getFictionById(id: number): Observable<Fiction> {
     return this.http.get<Fiction>(`/api/products/books/fiction/${id}`);
   }
+
+  deleteFictionById(id: number): Observable<any> {
+    return this.http.delete<Fiction>(`/api/products/books/fiction/${id}`);
+  }
 }

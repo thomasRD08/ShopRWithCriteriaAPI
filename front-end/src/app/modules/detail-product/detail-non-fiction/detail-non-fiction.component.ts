@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NonFiction} from "../../../models/non-fiction";
 import {NonFictionService} from "../../../services/non-fiction.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-detail-non-fiction',
@@ -10,14 +10,18 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class DetailNonFictionComponent implements OnInit {
   nonFiction: NonFiction;
+  id: number;
 
-  constructor(private nonFictionService: NonFictionService, private route: ActivatedRoute) { }
+  constructor(private nonFictionService: NonFictionService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      const id = params['id'];
-      this.nonFictionService.getNonFictionById(id).subscribe(data => this.nonFiction = data);
+      this.id = params['id'];
+      this.nonFictionService.getNonFictionById(this.id).subscribe(data => this.nonFiction = data);
     })
   }
 
+  delete() {
+    this.nonFictionService.deleteNonFictionById(this.id).subscribe(() => this.router.navigate(['/products/books/non-fiction']))
+  }
 }

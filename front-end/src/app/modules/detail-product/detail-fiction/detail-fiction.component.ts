@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Fiction} from "../../../models/fiction";
 import {FictionService} from "../../../services/fiction.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-detail-fiction',
@@ -10,14 +10,18 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class DetailFictionComponent implements OnInit {
   fiction: Fiction;
+  id: number;
 
-  constructor(private fictionService: FictionService, private route: ActivatedRoute) { }
+  constructor(private fictionService: FictionService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      const id = params['id'];
-      this.fictionService.getFictionById(id).subscribe(data => this.fiction = data);
+      this.id = params['id'];
+      this.fictionService.getFictionById(this.id).subscribe(data => this.fiction = data);
     })
   }
 
+  delete() {
+    this.fictionService.deleteFictionById(this.id).subscribe(() => this.router.navigate(['/products/books/fiction']))
+  }
 }

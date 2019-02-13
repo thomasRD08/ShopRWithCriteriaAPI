@@ -21,4 +21,8 @@ export class GameService {
   getGameById(id: number): Observable<Game> {
     return this.http.get<Game>(`/api/products/games/${id}`);
   }
+
+  deleteGameById(id: number): Observable<any> {
+    return this.http.delete<Game>(`/api/products/games/${id}`);
+  }
 }
