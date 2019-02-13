@@ -12,20 +12,28 @@ import {CreateLpComponent} from "./modules/create-product/create-lp/create-lp.co
 import {CreateGameComponent} from "./modules/create-product/create-game/create-game.component";
 import {CreateFictionComponent} from "./modules/create-product/create-fiction/create-fiction.component";
 import {CreateNonFictionComponent} from "./modules/create-product/create-non-fiction/create-non-fiction.component";
+import {DetailLpComponent} from "./modules/detail-product/detail-lp/detail-lp.component";
+import {DetailGameComponent} from "./modules/detail-product/detail-game/detail-game.component";
+import {DetailFictionComponent} from "./modules/detail-product/detail-fiction/detail-fiction.component";
+import {DetailNonFictionComponent} from "./modules/detail-product/detail-non-fiction/detail-non-fiction.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'overview/products', component: ProductsComponent},
-  {path: 'overview/products/lps', component: LpsComponent},
-  {path: 'overview/products/games', component: GamesComponent},
-  {path: 'overview/products/books', component: BooksComponent},
-  {path: 'overview/products/books/fiction', component: FictionComponent},
-  {path: 'overview/products/books/non-fiction', component: NonFictionComponent},
-  {path: 'create/products/lp', component: CreateLpComponent},
-  {path: 'create/products/game', component: CreateGameComponent},
-  {path: 'create/products/fiction', component: CreateFictionComponent},
-  {path: 'create/products/non-fiction', component: CreateNonFictionComponent}
+  {path: 'products', component: ProductsComponent},
+  {path: 'products/lp', component: LpsComponent},
+  {path: 'products/lp/create', component: CreateLpComponent},
+  {path: 'products/lp/:id', component: DetailLpComponent},
+  {path: 'products/game', component: GamesComponent},
+  {path: 'products/game/create', component: CreateGameComponent},
+  {path: 'products/game/:id', component: DetailGameComponent},
+  {path: 'products/books', component: BooksComponent},
+  {path: 'products/books/fiction', component: FictionComponent},
+  {path: 'products/books/fiction/create', component: CreateFictionComponent},
+  {path: 'products/books/fiction/:id', component: DetailFictionComponent},
+  {path: 'products/books/non-fiction', component: NonFictionComponent},
+  {path: 'products/books/non-fiction/create', component: CreateNonFictionComponent},
+  {path: 'products/books/non-fiction/:id', component: DetailNonFictionComponent}
 ];
 
 @NgModule({
