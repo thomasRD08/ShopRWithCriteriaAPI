@@ -18,6 +18,6 @@ export class CreateGameComponent implements OnInit {
   }
 
   createGame() {
-    this.gameService.createGame(this.game).subscribe(() => this.router.navigate(['/overview/products/games']))
+    this.gameService.createGame(this.game).subscribe(() => this.router.navigate(['/products/game']))
   }
 }

@@ -17,6 +17,6 @@ export class CreateNonFictionComponent implements OnInit {
   }
 
   createNonFiction() {
-    this.nonFictionService.createNonFiction(this.nonFiction).subscribe(() => this.router.navigate(['/overview/products/books/non-fiction']))
+    this.nonFictionService.createNonFiction(this.nonFiction).subscribe(() => this.router.navigate(['/products/books/non-fiction']))
   }
 }

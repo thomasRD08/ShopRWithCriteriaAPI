@@ -17,6 +17,6 @@ export class CreateFictionComponent implements OnInit {
   }
 
   createFiction() {
-    this.fictionService.createFiction(this.fiction).subscribe(() => this.router.navigate(['/overview/products/books/fiction']))
+    this.fictionService.createFiction(this.fiction).subscribe(() => this.router.navigate(['/products/books/fiction']))
   }
 }

@@ -17,6 +17,6 @@ export class CreateLpComponent implements OnInit {
   }
 
   createLp() {
-    this.lpService.createLp(this.lp).subscribe(() => this.router.navigate(['/overview/products/lps']));
+    this.lpService.createLp(this.lp).subscribe(() => this.router.navigate(['/products/lp']));
   }
 }
