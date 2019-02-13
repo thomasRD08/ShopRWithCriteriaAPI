@@ -17,4 +17,8 @@ export class FictionService {
   getFiction(): Observable<Fiction[]> {
     return this.http.get<Fiction[]>('/api/products/books/fiction')
   }
+
+  getFictionById(id: number): Observable<Fiction> {
+    return this.http.get<Fiction>(`/api/products/books/fiction/${id}`);
+  }
 }

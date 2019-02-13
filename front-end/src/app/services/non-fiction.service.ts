@@ -17,4 +17,8 @@ export class NonFictionService {
   getNonFiction(): Observable<NonFiction[]> {
     return this.http.get<NonFiction[]>('/api/products/books/non-fiction');
   }
+
+  getNonFictionById(id: number): Observable<NonFiction> {
+    return this.http.get<NonFiction>(`/api/products/books/non-fiction/${id}`);
+  }
 }

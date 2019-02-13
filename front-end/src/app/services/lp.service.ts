@@ -17,4 +17,8 @@ export class LpService {
   getLps(): Observable<Lp[]> {
     return this.http.get<Lp[]>('/api/products/lps');
   }
+
+  getLpById(id: number): Observable<Lp> {
+    return this.http.get<Lp>(`/api/products/lps/${id}`);
+  }
 }
