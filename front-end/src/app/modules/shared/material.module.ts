@@ -5,9 +5,12 @@ import {
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
+  MatListModule,
   MatMenuModule,
   MatOptionModule,
+  MatPaginatorModule,
   MatSelectModule,
+  MatSortModule,
   MatTableModule,
   MatToolbarModule
 } from "@angular/material";
@@ -24,7 +27,10 @@ import {
     MatSelectModule,
     MatOptionModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatListModule
   ],
   exports: [
     MatToolbarModule,
@@ -35,7 +41,10 @@ import {
     MatSelectModule,
     MatOptionModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatListModule
   ]
 })
 export class MaterialModule {
