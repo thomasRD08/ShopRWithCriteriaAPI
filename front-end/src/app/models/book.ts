@@ -1,9 +1,9 @@
 export class Book {
-  private id: number;
-  private title: string;
-  private price: number;
-  private type: string;
-  private author: string;
-  private isbn: string;
-  private pages: string;
+  public id: number;
+  public title: string;
+  public price: number;
+  public type: string;
+  public author: string;
+  public isbn: string;
+  public pages: string;
 }

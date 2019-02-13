@@ -1,11 +1,11 @@
 export class Fiction {
-  private id: number;
-  private title: string;
-  private price: number;
+  public id: number;
+  public title: string;
+  public price: number;
   private type: string;
-  private author: string;
-  private isbn: string;
-  private pages: string;
-  private fictionGenre: string;
-  private summary: string;
+  public author: string;
+  public isbn: string;
+  public pages: string;
+  public fictionGenre: string;
+  public summary: string;
 }

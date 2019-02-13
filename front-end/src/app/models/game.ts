@@ -1,9 +1,9 @@
 export class Game {
-  private id: number;
-  private title: string;
-  private price: number;
+  public id: number;
+  public title: string;
+  public price: number;
   private type: string;
-  private publisher: string;
-  private minAge: number;
-  private gameGenre: string;
+  public publisher: string;
+  public minAge: number;
+  public gameGenre: string;
 }
