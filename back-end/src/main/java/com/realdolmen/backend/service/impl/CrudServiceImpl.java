@@ -25,7 +25,7 @@ public abstract class CrudServiceImpl<T, PK> implements CrudService<T, PK> {
     @Override
     public T findById(PK primaryKey) {
         return getRepository().findById(primaryKey)
-                .orElseThrow(() -> new NotFoundException("Primary key not found for " + entityClass.getName() + ": " + primaryKey));
+                .orElseThrow(() -> new NotFoundException("Primary key not found for " + entityClass.getSimpleName() + ": " + primaryKey));
     }
 
     @Override
