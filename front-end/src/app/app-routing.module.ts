@@ -24,16 +24,20 @@ const routes: Routes = [
   {path: 'products/lp', component: LpsComponent},
   {path: 'products/lp/create', component: CreateLpComponent},
   {path: 'products/lp/:id', component: DetailLpComponent},
+  {path: 'products/lp/:id/edit', component: CreateLpComponent},
   {path: 'products/game', component: GamesComponent},
   {path: 'products/game/create', component: CreateGameComponent},
   {path: 'products/game/:id', component: DetailGameComponent},
+  {path: 'products/game/:id/edit', component: CreateGameComponent},
   {path: 'products/books', component: BooksComponent},
   {path: 'products/books/fiction', component: FictionComponent},
   {path: 'products/books/fiction/create', component: CreateFictionComponent},
   {path: 'products/books/fiction/:id', component: DetailFictionComponent},
+  {path: 'products/books/fiction/:id/edit', component: CreateFictionComponent},
   {path: 'products/books/non-fiction', component: NonFictionComponent},
   {path: 'products/books/non-fiction/create', component: CreateNonFictionComponent},
-  {path: 'products/books/non-fiction/:id', component: DetailNonFictionComponent}
+  {path: 'products/books/non-fiction/:id', component: DetailNonFictionComponent},
+  {path: 'products/books/non-fiction/:id/edit', component: CreateNonFictionComponent}
 ];
 
 @NgModule({

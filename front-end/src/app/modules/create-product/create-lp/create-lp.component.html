@@ -12,5 +12,5 @@
   <mat-form-field>
     <input matInput placeholder="Price" [(ngModel)]="lp.price">
   </mat-form-field>
-  <button mat-button (click)="createLp()">Confirm</button>
+  <button mat-button [disabled]="pending" (click)="confirm()">Confirm</button>
 </mat-card>

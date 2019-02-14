@@ -22,6 +22,10 @@ export class DetailLpComponent implements OnInit {
     })
   }
 
+  edit() {
+    this.router.navigate([`/products/lp/${this.id}/edit`]);
+  }
+
   delete() {
     this.lpService.deleteLpById(this.id).subscribe(() => this.router.navigate(['/products/lp']));
   }

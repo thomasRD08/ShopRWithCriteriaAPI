@@ -21,7 +21,11 @@ export class DetailNonFictionComponent implements OnInit {
     })
   }
 
+  edit() {
+    this.router.navigate([`/products/books/non-fiction/${this.id}/edit`]);
+  }
+
   delete() {
-    this.nonFictionService.deleteNonFictionById(this.id).subscribe(() => this.router.navigate(['/products/books/non-fiction']))
+    this.nonFictionService.deleteNonFictionById(this.id).subscribe(() => this.router.navigate(['/products/books/non-fiction']));
   }
 }

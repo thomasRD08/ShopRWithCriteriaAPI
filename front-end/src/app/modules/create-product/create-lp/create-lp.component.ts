@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LpService} from "../../../services/lp.service";
 import {Lp} from "../../../models/lp";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-lp',
@@ -10,13 +10,29 @@ import {Router} from "@angular/router";
 })
 export class CreateLpComponent implements OnInit {
   lp: Lp = new Lp();
+  id: number;
+  pending: boolean;
 
-  constructor(private lpService: LpService, private router: Router) { }
-
-  ngOnInit() {
+  constructor(private lpService: LpService, private router: Router, private route: ActivatedRoute) {
   }
 
-  createLp() {
-    this.lpService.createLp(this.lp).subscribe(() => this.router.navigate(['/products/lp']));
+  ngOnInit() {
+    this.id = +this.route.snapshot.paramMap.get('id');
+    if (this.id) {
+      this.lpService.getLpById(this.id).subscribe((data) => {
+        this.lp = data;
+        this.pending = false;
+      });
+    } else {
+      this.pending = false;
+    }
+  }
+
+  confirm() {
+    if (!this.id) {
+      this.lpService.createLp(this.lp).subscribe(() => this.router.navigate(['/products/lp']));
+    } else {
+      this.lpService.updateLpById(this.id, this.lp).subscribe(() => this.router.navigate(['/products/lp']));
+    }
   }
 }

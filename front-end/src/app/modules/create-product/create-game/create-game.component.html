@@ -15,5 +15,5 @@
   <mat-form-field>
     <input matInput placeholder="Price" [(ngModel)]="game.price">
   </mat-form-field>
-  <button mat-button (click)="createGame()">Confirm</button>
+  <button mat-button [disabled]="pending" (click)="confirm()">Confirm</button>
 </mat-card>

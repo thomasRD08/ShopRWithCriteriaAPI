@@ -22,6 +22,10 @@ export class GameService {
     return this.http.get<Game>(`/api/products/games/${id}`);
   }
 
+  updateGameById(id: number, game: Game): Observable<Game> {
+    return this.http.put<Game>(`/api/products/games/${id}`, game);
+  }
+
   deleteGameById(id: number): Observable<any> {
     return this.http.delete<Game>(`/api/products/games/${id}`);
   }

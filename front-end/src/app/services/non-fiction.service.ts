@@ -22,6 +22,10 @@ export class NonFictionService {
     return this.http.get<NonFiction>(`/api/products/books/non-fiction/${id}`);
   }
 
+  updateNonFitionById(id: number, nonFiction: NonFiction): Observable<NonFiction> {
+    return this.http.put<NonFiction>(`/api/products/books/non-fiction/${id}`, nonFiction);
+  }
+
   deleteNonFictionById(id: number): Observable<any> {
     return this.http.delete<NonFiction>(`/api/products/books/non-fiction/${id}`);
   }

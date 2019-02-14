@@ -21,6 +21,10 @@ export class DetailFictionComponent implements OnInit {
     })
   }
 
+  edit() {
+    this.router.navigate([`/products/books/fiction/${this.id}/edit`]);
+  }
+
   delete() {
     this.fictionService.deleteFictionById(this.id).subscribe(() => this.router.navigate(['/products/books/fiction']))
   }

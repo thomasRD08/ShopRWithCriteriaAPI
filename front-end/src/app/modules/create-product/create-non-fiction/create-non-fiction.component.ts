@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NonFiction} from "../../../models/non-fiction";
 import {NonFictionService} from "../../../services/non-fiction.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-non-fiction',
@@ -10,13 +10,29 @@ import {Router} from "@angular/router";
 })
 export class CreateNonFictionComponent implements OnInit {
   nonFiction: NonFiction = new NonFiction();
+  id: number;
+  pending: boolean;
 
-  constructor(private nonFictionService: NonFictionService, private router: Router) { }
-
-  ngOnInit() {
+  constructor(private nonFictionService: NonFictionService, private router: Router, private route: ActivatedRoute) {
   }
 
-  createNonFiction() {
-    this.nonFictionService.createNonFiction(this.nonFiction).subscribe(() => this.router.navigate(['/products/books/non-fiction']))
+  ngOnInit() {
+    this.id = +this.route.snapshot.paramMap.get('id');
+    if (this.id) {
+      this.nonFictionService.getNonFictionById(this.id).subscribe((data) => {
+        this.nonFiction = data;
+        this.pending = false;
+      });
+    } else {
+      this.pending = false;
+    }
+  }
+
+  confirm() {
+    if (!this.id) {
+      this.nonFictionService.createNonFiction(this.nonFiction).subscribe(() => this.router.navigate(['/products/books/non-fiction']))
+    } else {
+      this.nonFictionService.updateNonFitionById(this.id, this.nonFiction).subscribe(() => this.router.navigate(['/products/books/non-fiction']));
+    }
   }
 }

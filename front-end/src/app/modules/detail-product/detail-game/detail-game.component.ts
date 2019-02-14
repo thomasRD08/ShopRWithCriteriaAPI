@@ -22,7 +22,11 @@ export class DetailGameComponent implements OnInit {
     })
   }
 
+  edit() {
+    this.router.navigate([`/products/game/${this.id}/edit`]);
+  }
+
   delete() {
-    this.gameService.deleteGameById(this.id).subscribe(() => this.router.navigate(['/products/game']))
+    this.gameService.deleteGameById(this.id).subscribe(() => this.router.navigate(['/products/game']));
   }
 }

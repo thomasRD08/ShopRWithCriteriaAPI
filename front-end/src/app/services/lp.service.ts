@@ -22,6 +22,10 @@ export class LpService {
     return this.http.get<Lp>(`/api/products/lps/${id}`);
   }
 
+  updateLpById(id: number, lp: Lp): Observable<Lp> {
+    return this.http.put<Lp>(`/api/products/lps/${id}`, lp);
+  }
+
   deleteLpById(id: number): Observable<any> {
     return this.http.delete<Lp>(`/api/products/lps/${id}`);
   }

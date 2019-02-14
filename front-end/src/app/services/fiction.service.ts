@@ -22,6 +22,10 @@ export class FictionService {
     return this.http.get<Fiction>(`/api/products/books/fiction/${id}`);
   }
 
+  updateFictionById(id: number, fiction: Fiction): Observable<Fiction> {
+    return this.http.put<Fiction>(`/api/products/books/fiction/${id}`, fiction);
+  }
+
   deleteFictionById(id: number): Observable<any> {
     return this.http.delete<Fiction>(`/api/products/books/fiction/${id}`);
   }
