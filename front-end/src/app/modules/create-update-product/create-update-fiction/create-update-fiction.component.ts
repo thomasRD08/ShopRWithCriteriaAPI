@@ -5,10 +5,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-fiction',
-  templateUrl: './create-fiction.component.html',
-  styleUrls: ['./create-fiction.component.scss']
+  templateUrl: './create-update-fiction.component.html',
+  styleUrls: ['./create-update-fiction.component.scss']
 })
-export class CreateFictionComponent implements OnInit {
+export class CreateUpdateFictionComponent implements OnInit {
   fiction: Fiction = new Fiction();
   id: number;
   pending: boolean;

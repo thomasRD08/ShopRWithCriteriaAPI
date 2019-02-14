@@ -5,10 +5,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-non-fiction',
-  templateUrl: './create-non-fiction.component.html',
-  styleUrls: ['./create-non-fiction.component.scss']
+  templateUrl: './create-update-non-fiction.component.html',
+  styleUrls: ['./create-update-non-fiction.component.scss']
 })
-export class CreateNonFictionComponent implements OnInit {
+export class CreateUpdateNonFictionComponent implements OnInit {
   nonFiction: NonFiction = new NonFiction();
   id: number;
   pending: boolean;

@@ -5,10 +5,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-game',
-  templateUrl: './create-game.component.html',
-  styleUrls: ['./create-game.component.scss']
+  templateUrl: './create-update-game.component.html',
+  styleUrls: ['./create-update-game.component.scss']
 })
-export class CreateGameComponent implements OnInit {
+export class CreateUpdateGameComponent implements OnInit {
   game: Game = new Game();
   id: number;
   pending: boolean;

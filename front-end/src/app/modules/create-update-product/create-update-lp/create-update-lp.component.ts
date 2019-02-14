@@ -5,10 +5,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-lp',
-  templateUrl: './create-lp.component.html',
-  styleUrls: ['./create-lp.component.scss']
+  templateUrl: './create-update-lp.component.html',
+  styleUrls: ['./create-update-lp.component.scss']
 })
-export class CreateLpComponent implements OnInit {
+export class CreateUpdateLpComponent implements OnInit {
   lp: Lp = new Lp();
   id: number;
   pending: boolean;

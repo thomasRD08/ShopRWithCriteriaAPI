@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {SharedModule} from "./modules/shared/shared.module";
 import {AuthModule} from "./modules/auth/auth.module";
 import {OverviewProductModule} from "./modules/overview-product/overview-product.module";
-import {CreateProductModule} from "./modules/create-product/create-product.module";
+import {CreateUpdateProductModule} from "./modules/create-update-product/create-update-product.module";
 import {DetailProductModule} from "./modules/detail-product/detail-product.module";
 
 @NgModule({
@@ -19,7 +19,7 @@ import {DetailProductModule} from "./modules/detail-product/detail-product.modul
     SharedModule,
     AuthModule,
     OverviewProductModule,
-    CreateProductModule,
+    CreateUpdateProductModule,
     DetailProductModule
   ],
   providers: [],
