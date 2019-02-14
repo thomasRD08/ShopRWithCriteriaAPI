@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>Shockr</span>
+  <span>ShockR</span>
 
   <div class="left">
     <button mat-button [matMenuTriggerFor]="overview">Overview</button>
@@ -22,11 +22,10 @@
   </div>
 
   <div class="right">
-    <button *ngIf="user" mat-button>Shopping Cart</button>
+    <button *ngIf="user" mat-button>Shocking Cart</button>
 
     <button *ngIf="user" mat-button [matMenuTriggerFor]="currentUser">{{user.username}}</button>
     <mat-menu #currentUser="matMenu">
-      <button mat-menu-item>Favorites</button>
       <button mat-menu-item (click)="logout()">Log Out</button>
     </mat-menu>
 
