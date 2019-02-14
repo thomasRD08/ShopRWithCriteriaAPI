@@ -6,10 +6,10 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-games',
-  templateUrl: './games.component.html',
-  styleUrls: ['./games.component.scss']
+  templateUrl: './overview-game.component.html',
+  styleUrls: ['./overview-game.component.scss']
 })
-export class GamesComponent implements OnInit, AfterContentInit {
+export class OverviewGameComponent implements OnInit, AfterContentInit {
   displayedColumns: any[] = ['title', 'publisher', 'minAge', 'gameGenre', 'price', 'detail'];
   dataSource = new MatTableDataSource<Game>();
 

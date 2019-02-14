@@ -7,10 +7,10 @@ import {Lp} from "../../../models/lp";
 
 @Component({
   selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  templateUrl: './overview-products.component.html',
+  styleUrls: ['./overview-products.component.scss']
 })
-export class ProductsComponent implements OnInit, AfterContentInit {
+export class OverviewProductsComponent implements OnInit, AfterContentInit {
   displayedColumns: any[] = ['type', 'title', 'price', 'detail'];
   dataSource = new MatTableDataSource<Product>();
 

@@ -6,10 +6,10 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-books',
-  templateUrl: './books.component.html',
-  styleUrls: ['./books.component.scss']
+  templateUrl: './overview-books.component.html',
+  styleUrls: ['./overview-books.component.scss']
 })
-export class BooksComponent implements OnInit, AfterContentInit {
+export class OverviewBooksComponent implements OnInit, AfterContentInit {
   displayedColumns: any[] = ['type', 'title', 'author', 'isbn', 'pages', 'price', 'detail'];
   dataSource = new MatTableDataSource<Book>();
 

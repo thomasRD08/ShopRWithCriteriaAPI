@@ -6,10 +6,10 @@ import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
 
 @Component({
   selector: 'app-lps',
-  templateUrl: './lps.component.html',
-  styleUrls: ['./lps.component.scss']
+  templateUrl: './overview-lp.component.html',
+  styleUrls: ['./overview-lp.component.scss']
 })
-export class LpsComponent implements OnInit, AfterContentInit {
+export class OverviewLpComponent implements OnInit, AfterContentInit {
   displayedColumns: any[] = ['title', 'artist', 'lpGenre', 'price', 'detail'];
   dataSource = new MatTableDataSource<Lp>();
 

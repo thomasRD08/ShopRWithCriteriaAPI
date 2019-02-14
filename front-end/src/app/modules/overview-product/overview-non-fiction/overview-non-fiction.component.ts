@@ -6,10 +6,10 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-non-fiction',
-  templateUrl: './non-fiction.component.html',
-  styleUrls: ['./non-fiction.component.scss']
+  templateUrl: './overview-non-fiction.component.html',
+  styleUrls: ['./overview-non-fiction.component.scss']
 })
-export class NonFictionComponent implements OnInit, AfterContentInit {
+export class OverviewNonFictionComponent implements OnInit, AfterContentInit {
   displayedColumns: any[] = ['title', 'author', 'isbn', 'pages', 'nonFictionSubject', 'price', 'detail'];
   dataSource = new MatTableDataSource<NonFiction>();
 

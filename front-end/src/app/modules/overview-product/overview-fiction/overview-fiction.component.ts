@@ -6,10 +6,10 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-fiction',
-  templateUrl: './fiction.component.html',
-  styleUrls: ['./fiction.component.scss']
+  templateUrl: './overview-fiction.component.html',
+  styleUrls: ['./overview-fiction.component.scss']
 })
-export class FictionComponent implements OnInit, AfterContentInit {
+export class OverviewFictionComponent implements OnInit, AfterContentInit {
   displayedColumns: any[] = ['title', 'author', 'isbn', 'pages', 'fictionGenre', 'summary', 'price', 'detail'];
   dataSource = new MatTableDataSource<Fiction>();
 

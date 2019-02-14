@@ -2,12 +2,12 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from "./modules/auth/login/login.component";
 import {RegisterComponent} from "./modules/auth/register/register.component";
-import {ProductsComponent} from "./modules/overview-product/products/products.component";
-import {BooksComponent} from "./modules/overview-product/books/books.component";
-import {FictionComponent} from "./modules/overview-product/fiction/fiction.component";
-import {NonFictionComponent} from "./modules/overview-product/non-fiction/non-fiction.component";
-import {LpsComponent} from "./modules/overview-product/lps/lps.component";
-import {GamesComponent} from "./modules/overview-product/games/games.component";
+import {OverviewProductsComponent} from "./modules/overview-product/overview-products/overview-products.component";
+import {OverviewBooksComponent} from "./modules/overview-product/overview-books/overview-books.component";
+import {OverviewFictionComponent} from "./modules/overview-product/overview-fiction/overview-fiction.component";
+import {OverviewNonFictionComponent} from "./modules/overview-product/overview-non-fiction/overview-non-fiction.component";
+import {OverviewLpComponent} from "./modules/overview-product/overview-lp/overview-lp.component";
+import {OverviewGameComponent} from "./modules/overview-product/overview-game/overview-game.component";
 import {CreateUpdateLpComponent} from "./modules/create-update-product/create-update-lp/create-update-lp.component";
 import {CreateUpdateGameComponent} from "./modules/create-update-product/create-update-game/create-update-game.component";
 import {CreateUpdateFictionComponent} from "./modules/create-update-product/create-update-fiction/create-update-fiction.component";
@@ -20,21 +20,21 @@ import {DetailNonFictionComponent} from "./modules/detail-product/detail-non-fic
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'products', component: ProductsComponent},
-  {path: 'products/lp', component: LpsComponent},
+  {path: 'products', component: OverviewProductsComponent},
+  {path: 'products/lp', component: OverviewLpComponent},
   {path: 'products/lp/create', component: CreateUpdateLpComponent},
   {path: 'products/lp/:id', component: DetailLpComponent},
   {path: 'products/lp/:id/edit', component: CreateUpdateLpComponent},
-  {path: 'products/game', component: GamesComponent},
+  {path: 'products/game', component: OverviewGameComponent},
   {path: 'products/game/create', component: CreateUpdateGameComponent},
   {path: 'products/game/:id', component: DetailGameComponent},
   {path: 'products/game/:id/edit', component: CreateUpdateGameComponent},
-  {path: 'products/books', component: BooksComponent},
-  {path: 'products/books/fiction', component: FictionComponent},
+  {path: 'products/books', component: OverviewBooksComponent},
+  {path: 'products/books/fiction', component: OverviewFictionComponent},
   {path: 'products/books/fiction/create', component: CreateUpdateFictionComponent},
   {path: 'products/books/fiction/:id', component: DetailFictionComponent},
   {path: 'products/books/fiction/:id/edit', component: CreateUpdateFictionComponent},
-  {path: 'products/books/non-fiction', component: NonFictionComponent},
+  {path: 'products/books/non-fiction', component: OverviewNonFictionComponent},
   {path: 'products/books/non-fiction/create', component: CreateUpdateNonFictionComponent},
   {path: 'products/books/non-fiction/:id', component: DetailNonFictionComponent},
   {path: 'products/books/non-fiction/:id/edit', component: CreateUpdateNonFictionComponent}

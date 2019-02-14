@@ -1,39 +1,39 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ProductsComponent} from "./products/products.component";
+import {OverviewProductsComponent} from "./overview-products/overview-products.component";
 import {SharedModule} from "../shared/shared.module";
 import {ProductService} from "../../services/product.service";
-import {BooksComponent} from './books/books.component';
+import {OverviewBooksComponent} from './overview-books/overview-books.component';
 import {BookService} from "../../services/book.service";
-import {LpsComponent} from './lps/lps.component';
-import {GamesComponent} from './games/games.component';
+import {OverviewLpComponent} from './overview-lp/overview-lp.component';
+import {OverviewGameComponent} from './overview-game/overview-game.component';
 import {LpService} from "../../services/lp.service";
 import {GameService} from "../../services/game.service";
 import {FictionService} from "../../services/fiction.service";
 import {NonFictionService} from "../../services/non-fiction.service";
-import {FictionComponent} from './fiction/fiction.component';
-import {NonFictionComponent} from './non-fiction/non-fiction.component';
+import {OverviewFictionComponent} from './overview-fiction/overview-fiction.component';
+import {OverviewNonFictionComponent} from './overview-non-fiction/overview-non-fiction.component';
 
 @NgModule({
   declarations: [
-    ProductsComponent,
-    BooksComponent,
-    LpsComponent,
-    GamesComponent,
-    FictionComponent,
-    NonFictionComponent
+    OverviewProductsComponent,
+    OverviewBooksComponent,
+    OverviewLpComponent,
+    OverviewGameComponent,
+    OverviewFictionComponent,
+    OverviewNonFictionComponent
   ],
   imports: [
     CommonModule,
     SharedModule
   ],
   exports: [
-    ProductsComponent,
-    BooksComponent,
-    LpsComponent,
-    GamesComponent,
-    FictionComponent,
-    NonFictionComponent
+    OverviewProductsComponent,
+    OverviewBooksComponent,
+    OverviewLpComponent,
+    OverviewGameComponent,
+    OverviewFictionComponent,
+    OverviewNonFictionComponent
   ],
   providers: [
     ProductService,
