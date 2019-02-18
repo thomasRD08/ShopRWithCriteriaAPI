@@ -9,6 +9,7 @@ import {DetailLpComponent} from './detail-lp/detail-lp.component';
 import {DetailGameComponent} from './detail-game/detail-game.component';
 import {DetailNonFictionComponent} from './detail-non-fiction/detail-non-fiction.component';
 import {SharedModule} from "../shared/shared.module";
+import {OrderModule} from "../order/order.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {SharedModule} from "../shared/shared.module";
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    OrderModule
   ],
   exports: [],
   providers: [
