@@ -22,7 +22,7 @@
   </div>
 
   <div class="right">
-    <button *ngIf="user" mat-button>Shocking Cart</button>
+    <button *ngIf="user" mat-button routerLink="/cart">Shocking Cart</button>
 
     <button *ngIf="user" mat-button [matMenuTriggerFor]="currentUser">{{user.username}}</button>
     <mat-menu #currentUser="matMenu">

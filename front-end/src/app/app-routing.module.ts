@@ -16,6 +16,7 @@ import {DetailLpComponent} from "./modules/detail-product/detail-lp/detail-lp.co
 import {DetailGameComponent} from "./modules/detail-product/detail-game/detail-game.component";
 import {DetailFictionComponent} from "./modules/detail-product/detail-fiction/detail-fiction.component";
 import {DetailNonFictionComponent} from "./modules/detail-product/detail-non-fiction/detail-non-fiction.component";
+import {OrderComponent} from "./modules/order/order/order.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path: 'products/books/non-fiction', component: OverviewNonFictionComponent},
   {path: 'products/books/non-fiction/create', component: CreateUpdateNonFictionComponent},
   {path: 'products/books/non-fiction/:id', component: DetailNonFictionComponent},
-  {path: 'products/books/non-fiction/:id/edit', component: CreateUpdateNonFictionComponent}
+  {path: 'products/books/non-fiction/:id/edit', component: CreateUpdateNonFictionComponent},
+  {path: 'cart', component: OrderComponent}
 ];
 
 @NgModule({
