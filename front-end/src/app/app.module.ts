@@ -8,6 +8,7 @@ import {AuthModule} from "./modules/auth/auth.module";
 import {OverviewProductModule} from "./modules/overview-product/overview-product.module";
 import {CreateUpdateProductModule} from "./modules/create-update-product/create-update-product.module";
 import {DetailProductModule} from "./modules/detail-product/detail-product.module";
+import {OrderModule} from "./modules/order/order.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {DetailProductModule} from "./modules/detail-product/detail-product.modul
     AuthModule,
     OverviewProductModule,
     CreateUpdateProductModule,
-    DetailProductModule
+    DetailProductModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
