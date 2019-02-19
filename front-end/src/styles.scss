@@ -21,3 +21,15 @@ body {
   width: 70%;
   margin-left: 15%;
 }
+
+.mat-button:hover {
+  background-color: $sky;
+}
+
+.mat-button {
+  border-radius: 6px;
+  margin-left: 3px;
+  margin-right: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
