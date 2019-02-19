@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./overview-game.component.scss']
 })
 export class OverviewGameComponent implements OnInit, AfterContentInit {
-  displayedColumns: any[] = ['title', 'publisher', 'minAge', 'gameGenre', 'price', 'detail'];
+  displayedColumns: any[] = ['title', 'publisher', 'price', 'detail'];
   dataSource = new MatTableDataSource<Game>();
 
   @ViewChild(MatSort) sort: MatSort;

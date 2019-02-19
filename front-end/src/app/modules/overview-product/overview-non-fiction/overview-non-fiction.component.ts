@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./overview-non-fiction.component.scss']
 })
 export class OverviewNonFictionComponent implements OnInit, AfterContentInit {
-  displayedColumns: any[] = ['title', 'author', 'isbn', 'pages', 'nonFictionSubject', 'price', 'detail'];
+  displayedColumns: any[] = ['title', 'author', 'price', 'detail'];
   dataSource = new MatTableDataSource<NonFiction>();
 
   @ViewChild(MatSort) sort: MatSort;

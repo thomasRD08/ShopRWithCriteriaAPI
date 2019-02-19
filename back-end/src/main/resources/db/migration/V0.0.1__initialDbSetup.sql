@@ -1,5 +1,4 @@
 -- MySQL Workbench Forward Engineering
-
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -7,6 +6,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
+
 -- -----------------------------------------------------
 -- Schema shopr
 -- -----------------------------------------------------
@@ -111,6 +111,36 @@ CREATE TABLE IF NOT EXISTS `shopr`.`non_fiction` (
 
 
 -- -----------------------------------------------------
+-- Table `shopr`.`order`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shopr`.`order` (
+  `id` BIGINT(20) NOT NULL,
+  `time_stamp` DATETIME NULL DEFAULT NULL,
+  `user_id` BIGINT(20) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FKcpl0mjoeqhxvgeeeq5piwpd3i` (`user_id` ASC) VISIBLE)
+  ENGINE = MyISAM
+  DEFAULT CHARACTER SET = utf8mb4
+  COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `shopr`.`order_line`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shopr`.`order_line` (
+  `id` BIGINT(20) NOT NULL,
+  `amount` INT(11) NULL DEFAULT NULL,
+  `product_id` BIGINT(20) NULL DEFAULT NULL,
+  `order_id` BIGINT(20) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FKpf904tci8garypkvm32cqupye` (`product_id` ASC) VISIBLE,
+  INDEX `FKkfx57nvwbbfh2ygrm3qpkr6cj` (`order_id` ASC) VISIBLE)
+  ENGINE = MyISAM
+  DEFAULT CHARACTER SET = utf8mb4
+  COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
 -- Table `shopr`.`product`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `shopr`.`product` (
@@ -121,7 +151,6 @@ CREATE TABLE IF NOT EXISTS `shopr`.`product` (
   `version` BIGINT(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
   ENGINE = MyISAM
-  AUTO_INCREMENT = 2
   DEFAULT CHARACTER SET = utf8mb4
   COLLATE = utf8mb4_0900_ai_ci;
 

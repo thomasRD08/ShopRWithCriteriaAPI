@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./overview-fiction.component.scss']
 })
 export class OverviewFictionComponent implements OnInit, AfterContentInit {
-  displayedColumns: any[] = ['title', 'author', 'isbn', 'pages', 'fictionGenre', 'summary', 'price', 'detail'];
+  displayedColumns: any[] = ['title', 'author', 'price', 'detail'];
   dataSource = new MatTableDataSource<Fiction>();
 
   @ViewChild(MatSort) sort: MatSort;
