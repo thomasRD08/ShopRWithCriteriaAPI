@@ -4,7 +4,7 @@ import {OrderLineComponent} from './order-line/order-line.component';
 import {SharedModule} from "../shared/shared.module";
 import {OrderLineService} from "../../services/order-line.service";
 import {OrderComponent} from './order/order.component';
-import {ProductService} from "../../services/product.service";
+import {OrderService} from "../../services/order.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import {ProductService} from "../../services/product.service";
   ],
   providers: [
     OrderLineService,
-    ProductService
+    OrderService
   ]
 })
 export class OrderModule {

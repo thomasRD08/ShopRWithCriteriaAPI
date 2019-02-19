@@ -2,8 +2,6 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from "./modules/auth/login/login.component";
 import {RegisterComponent} from "./modules/auth/register/register.component";
-import {OverviewProductsComponent} from "./modules/overview-product/overview-products/overview-products.component";
-import {OverviewBooksComponent} from "./modules/overview-product/overview-books/overview-books.component";
 import {OverviewFictionComponent} from "./modules/overview-product/overview-fiction/overview-fiction.component";
 import {OverviewNonFictionComponent} from "./modules/overview-product/overview-non-fiction/overview-non-fiction.component";
 import {OverviewLpComponent} from "./modules/overview-product/overview-lp/overview-lp.component";
@@ -21,7 +19,6 @@ import {OrderComponent} from "./modules/order/order/order.component";
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'products', component: OverviewProductsComponent},
   {path: 'products/lp', component: OverviewLpComponent},
   {path: 'products/lp/create', component: CreateUpdateLpComponent},
   {path: 'products/lp/:id', component: DetailLpComponent},
@@ -30,7 +27,6 @@ const routes: Routes = [
   {path: 'products/game/create', component: CreateUpdateGameComponent},
   {path: 'products/game/:id', component: DetailGameComponent},
   {path: 'products/game/:id/edit', component: CreateUpdateGameComponent},
-  {path: 'products/books', component: OverviewBooksComponent},
   {path: 'products/books/fiction', component: OverviewFictionComponent},
   {path: 'products/books/fiction/create', component: CreateUpdateFictionComponent},
   {path: 'products/books/fiction/:id', component: DetailFictionComponent},

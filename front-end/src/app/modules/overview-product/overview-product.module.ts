@@ -1,10 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {OverviewProductsComponent} from "./overview-products/overview-products.component";
 import {SharedModule} from "../shared/shared.module";
-import {ProductService} from "../../services/product.service";
-import {OverviewBooksComponent} from './overview-books/overview-books.component';
-import {BookService} from "../../services/book.service";
 import {OverviewLpComponent} from './overview-lp/overview-lp.component';
 import {OverviewGameComponent} from './overview-game/overview-game.component';
 import {LpService} from "../../services/lp.service";
@@ -16,8 +12,6 @@ import {OverviewNonFictionComponent} from './overview-non-fiction/overview-non-f
 
 @NgModule({
   declarations: [
-    OverviewProductsComponent,
-    OverviewBooksComponent,
     OverviewLpComponent,
     OverviewGameComponent,
     OverviewFictionComponent,
@@ -28,16 +22,12 @@ import {OverviewNonFictionComponent} from './overview-non-fiction/overview-non-f
     SharedModule
   ],
   exports: [
-    OverviewProductsComponent,
-    OverviewBooksComponent,
     OverviewLpComponent,
     OverviewGameComponent,
     OverviewFictionComponent,
     OverviewNonFictionComponent
   ],
   providers: [
-    ProductService,
-    BookService,
     LpService,
     GameService,
     FictionService,

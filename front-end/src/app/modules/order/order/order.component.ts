@@ -5,6 +5,7 @@ import {OrderLineService} from "../../../services/order-line.service";
 import {Router} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
 import {Order} from "../../../models/order";
+import {OrderService} from "../../../services/order.service";
 
 @Component({
   selector: 'app-order',
@@ -18,7 +19,7 @@ export class OrderComponent implements OnInit, AfterContentInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private orderLineService: OrderLineService, private authService: AuthService, private router: Router) {
+  constructor(private orderLineService: OrderLineService, private orderService: OrderService, private authService: AuthService, private router: Router) {
   }
 
   ngOnInit() {
@@ -43,7 +44,8 @@ export class OrderComponent implements OnInit, AfterContentInit {
     let order = new Order(this.dataSource.data, this.authService.getCurrentUser());
     console.log(order);
     console.log(typeof order.orderLines[0].product);
-    this.orderLineService.saveOrder(order).subscribe(() => {
+    this.orderService.saveOrder(order).subscribe(() => {
+      this.router.navigate(['']);
     });
   }
 }
