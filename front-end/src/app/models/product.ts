@@ -1,4 +1,4 @@
-export class Product {
+export abstract class Product {
   public id: number;
   public title: string;
   public price: number;

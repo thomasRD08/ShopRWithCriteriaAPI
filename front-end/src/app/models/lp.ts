@@ -1,8 +1,6 @@
-export class Lp {
-  public id: number;
-  public title: string;
-  public price: number;
-  private type: string;
+import {Product} from "./product";
+
+export class Lp extends Product{
   public artist: string;
   public lpGenre: string;
 }

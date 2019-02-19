@@ -6,5 +6,7 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface BookMapper {
-    BookDto bookToBookDto(Book book);
+    default BookDto bookToBookDto(Book book) {
+        return null; //todo delete
+    }
 }

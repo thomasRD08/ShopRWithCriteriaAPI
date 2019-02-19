@@ -14,20 +14,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class GameDto {
-    private Long id;
-    private String title;
-    private Double price;
-    private String type;
+public class GameDto extends ProductDto {
     private String publisher;
     private Integer minAge;
     private GameGenre gameGenre;
 
     @Builder
-    public GameDto(String title, Double price, String type, String publisher, Integer minAge, GameGenre gameGenre) {
-        this.title = title;
-        this.price = price;
-        this.type = type;
+    public GameDto(Long id, String title, Double price, String type, String publisher, Integer minAge, GameGenre gameGenre) {
+        super(id, title, price, type);
         this.publisher = publisher;
         this.minAge = minAge;
         this.gameGenre = gameGenre;

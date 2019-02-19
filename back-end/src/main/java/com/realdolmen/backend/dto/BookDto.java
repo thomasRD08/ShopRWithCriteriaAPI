@@ -1,20 +1,21 @@
 package com.realdolmen.backend.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class BookDto {
-    private Long id;
-    private String title;
-    private Double price;
-    private String type;
+public abstract class BookDto extends ProductDto {
     private String author;
     private String isbn;
     private String pages;
+
+    public BookDto(Long id, String title, Double price, String type, String author, String isbn, String pages) {
+        super(id, title, price, type);
+        this.author = author;
+        this.isbn = isbn;
+        this.pages = pages;
+    }
 }

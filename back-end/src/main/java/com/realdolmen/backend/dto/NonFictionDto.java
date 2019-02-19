@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.ISBN;
 
 /**
  * Mapstruct 1.2.0.Final does not support mapping via builders.
@@ -15,25 +14,13 @@ import org.hibernate.validator.constraints.ISBN;
 @Getter
 @Setter
 @NoArgsConstructor
-public class NonFictionDto {
-    private Long id;
-    private String title;
-    private Double price;
-    private String type;
-    private String author;
-    @ISBN
-    private String isbn;
-    private String pages;
+public class NonFictionDto extends BookDto{
     private NonFictionSubject nonFictionSubject;
 
     @Builder
-    public NonFictionDto(String title, Double price, String type, String author, @ISBN String isbn, String pages, NonFictionSubject nonFictionSubject) {
-        this.title = title;
-        this.price = price;
-        this.type = type;
-        this.author = author;
-        this.isbn = isbn;
-        this.pages = pages;
+
+    public NonFictionDto(Long id, String title, Double price, String type, String author, String isbn, String pages, NonFictionSubject nonFictionSubject) {
+        super(id, title, price, type, author, isbn, pages);
         this.nonFictionSubject = nonFictionSubject;
     }
 }

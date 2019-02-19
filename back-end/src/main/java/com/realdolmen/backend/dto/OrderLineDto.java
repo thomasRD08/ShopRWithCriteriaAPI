@@ -1,17 +1,14 @@
 package com.realdolmen.backend.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public abstract class ProductDto {
+public class OrderLineDto {
     private Long id;
-    private String title;
-    private Double price;
-    private String type;
+    private Integer amount;
+    private ProductDto productDto;
 }

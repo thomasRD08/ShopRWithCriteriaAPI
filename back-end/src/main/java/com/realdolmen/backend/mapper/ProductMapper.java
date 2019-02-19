@@ -6,5 +6,7 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ProductMapper {
-    ProductDto productToProductDto(Product product);
+    default ProductDto productToProductDto(Product product) {
+        return null; //todo delete
+    }
 }

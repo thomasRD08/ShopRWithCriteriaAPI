@@ -24,8 +24,8 @@ public class Lp extends Product {
     private LpGenre lpGenre;
 
     @Builder
-    public Lp(String title, Double price, String type, String artist, LpGenre lpGenre) {
-        super(title, price, type);
+    public Lp(Long id, Long version, String title, Double price, String type, String artist, LpGenre lpGenre) {
+        super(id, version, title, price, type);
         this.artist = artist;
         this.lpGenre = lpGenre;
     }

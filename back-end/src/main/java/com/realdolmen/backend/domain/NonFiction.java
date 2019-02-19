@@ -23,8 +23,8 @@ public class NonFiction extends Book {
     private NonFictionSubject nonFictionSubject;
 
     @Builder
-    public NonFiction(String title, Double price, String type, String author, String isbn, String pages, NonFictionSubject nonFictionSubject) {
-        super(title, price, type, author, isbn, pages);
+    public NonFiction(Long id, Long version, String title, Double price, String type, String author, String isbn, String pages, NonFictionSubject nonFictionSubject) {
+        super(id, version, title, price, type, author, isbn, pages);
         this.nonFictionSubject = nonFictionSubject;
     }
 }

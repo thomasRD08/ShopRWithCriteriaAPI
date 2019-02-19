@@ -2,6 +2,9 @@ import {AfterContentInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
 import {OrderLine} from "../../../models/order-line";
 import {OrderLineService} from "../../../services/order-line.service";
+import {Router} from "@angular/router";
+import {AuthService} from "../../../services/auth.service";
+import {Order} from "../../../models/order";
 
 @Component({
   selector: 'app-order',
@@ -15,7 +18,7 @@ export class OrderComponent implements OnInit, AfterContentInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private orderLineService: OrderLineService) {
+  constructor(private orderLineService: OrderLineService, private authService: AuthService, private router: Router) {
   }
 
   ngOnInit() {
@@ -36,6 +39,11 @@ export class OrderComponent implements OnInit, AfterContentInit {
     return totalPrice;
   }
 
-  confirm() {
+  confirm(): void {
+    let order = new Order(this.dataSource.data, this.authService.getCurrentUser());
+    console.log(order);
+    console.log(typeof order.orderLines[0].product);
+    this.orderLineService.saveOrder(order).subscribe(() => {
+    });
   }
 }

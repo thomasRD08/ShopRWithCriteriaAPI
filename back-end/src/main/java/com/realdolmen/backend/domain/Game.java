@@ -26,8 +26,9 @@ public class Game extends Product {
     private GameGenre gameGenre;
 
     @Builder
-    public Game(String title, Double price, String type, String publisher, Integer minAge, GameGenre gameGenre) {
-        super(title, price, type);
+
+    public Game(Long id, Long version, String title, Double price, String type, String publisher, Integer minAge, GameGenre gameGenre) {
+        super(id, version, title, price, type);
         this.publisher = publisher;
         this.minAge = minAge;
         this.gameGenre = gameGenre;

@@ -14,19 +14,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class LpDto {
-    private Long id;
-    private String title;
-    private Double price;
-    private String type;
+public class LpDto extends ProductDto {
     private String artist;
     private LpGenre lpGenre;
 
     @Builder
-    public LpDto(String title, Double price, String type, String artist, LpGenre lpGenre) {
-        this.title = title;
-        this.price = price;
-        this.type = type;
+    public LpDto(Long id, String title, Double price, String type, String artist, LpGenre lpGenre) {
+        super(id, title, price, type);
         this.artist = artist;
         this.lpGenre = lpGenre;
     }

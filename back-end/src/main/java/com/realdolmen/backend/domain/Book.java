@@ -15,8 +15,8 @@ public abstract class Book extends Product {
     private String isbn;
     private String pages;
 
-    public Book(String title, Double price, String type, String author, String isbn, String pages) {
-        super(title, price, type);
+    public Book(Long id, Long version, String title, Double price, String type, String author, String isbn, String pages) {
+        super(id, version, title, price, type);
         this.author = author;
         this.isbn = isbn;
         this.pages = pages;
