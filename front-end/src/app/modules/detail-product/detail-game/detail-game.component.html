@@ -1,13 +1,15 @@
-<mat-card>
-  <mat-card-title>Details</mat-card-title>
-  <mat-list role="list" *ngIf="game">
-    <mat-list-item>{{game.title}}</mat-list-item>
-    <mat-list-item>{{game.publisher}}</mat-list-item>
-    <mat-list-item>{{game.minAge}}</mat-list-item>
-    <mat-list-item>{{game.gameGenre}}</mat-list-item>
-    <mat-list-item>{{game.price}}</mat-list-item>
-  </mat-list>
-  <button mat-button (click)="edit()">Edit</button>
-  <button mat-button (click)="delete()">Delete</button>
-</mat-card>
+<div class="details">
+  <mat-card>
+    <mat-card-title>Details</mat-card-title>
+    <mat-list role="list" *ngIf="game">
+      <mat-list-item>{{game.title}}</mat-list-item>
+      <mat-list-item>{{game.publisher}}</mat-list-item>
+      <mat-list-item>{{game.minAge}}</mat-list-item>
+      <mat-list-item>{{game.gameGenre}}</mat-list-item>
+      <mat-list-item>{{game.price}}</mat-list-item>
+    </mat-list>
+    <button mat-button (click)="edit()">Edit</button>
+    <button mat-button (click)="delete()">Delete</button>
+  </mat-card>
+</div>
 <app-order-line [product]="game"></app-order-line>

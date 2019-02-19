@@ -1,14 +1,16 @@
-<mat-card>
-  <mat-card-title>Details</mat-card-title>
-  <mat-list role="list" *ngIf="nonFiction">
-    <mat-list-item>{{nonFiction.title}}</mat-list-item>
-    <mat-list-item>{{nonFiction.author}}</mat-list-item>
-    <mat-list-item>{{nonFiction.isbn}}</mat-list-item>
-    <mat-list-item>{{nonFiction.pages}}</mat-list-item>
-    <mat-list-item>{{nonFiction.nonFictionSubject}}</mat-list-item>
-    <mat-list-item>{{nonFiction.price}}</mat-list-item>
-  </mat-list>
-  <button mat-button (click)="edit()">Edit</button>
-  <button mat-button (click)="delete()">Delete</button>
-</mat-card>
+<div class="details">
+  <mat-card>
+    <mat-card-title>Details</mat-card-title>
+    <mat-list role="list" *ngIf="nonFiction">
+      <mat-list-item>{{nonFiction.title}}</mat-list-item>
+      <mat-list-item>{{nonFiction.author}}</mat-list-item>
+      <mat-list-item>{{nonFiction.isbn}}</mat-list-item>
+      <mat-list-item>{{nonFiction.pages}}</mat-list-item>
+      <mat-list-item>{{nonFiction.nonFictionSubject}}</mat-list-item>
+      <mat-list-item>{{nonFiction.price}}</mat-list-item>
+    </mat-list>
+    <button mat-button (click)="edit()">Edit</button>
+    <button mat-button (click)="delete()">Delete</button>
+  </mat-card>
+</div>
 <app-order-line [product]="nonFiction"></app-order-line>
