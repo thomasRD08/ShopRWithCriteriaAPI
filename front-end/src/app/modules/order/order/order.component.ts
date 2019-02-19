@@ -45,7 +45,13 @@ export class OrderComponent implements OnInit, AfterContentInit {
     console.log(order);
     console.log(typeof order.orderLines[0].product);
     this.orderService.saveOrder(order).subscribe(() => {
+      this.orderLineService.deleteOrderLocalStorage();
       this.router.navigate(['']);
     });
+  }
+
+  delete(): void {
+    this.orderLineService.deleteOrderLocalStorage();
+    this.router.navigate([''])
   }
 }

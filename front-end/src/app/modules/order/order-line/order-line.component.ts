@@ -21,10 +21,6 @@ export class OrderLineComponent implements OnInit {
 
   ngOnInit() {
     this.orderLine = new OrderLine();
-    // this.route.params.subscribe((params) => {
-    //   this.id = params['id'];
-      // this.productService.getProductById(this.id).subscribe(data => this.orderLine.product = data);
-    // });
   }
 
   addOrderLineToOrder(): void {

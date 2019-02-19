@@ -1,14 +1,12 @@
 import {Injectable} from '@angular/core';
 import {OrderLine} from "../models/order-line";
 import {GlobalConstant} from "../modules/shared/global-constant";
-import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderLineService {
-  constructor(private http: HttpClient) {
+  constructor() {
   }
 
   addOrderLineToOrderLocalStorage(order: OrderLine[], orderLine: OrderLine): void {
@@ -20,7 +18,7 @@ export class OrderLineService {
     return JSON.parse(localStorage.getItem(GlobalConstant.ORDER));
   }
 
-  createOrderLine(orderLine: OrderLine): Observable<OrderLine> {
-    return this.http.post<OrderLine>('/api/order-lines', orderLine);
+  deleteOrderLocalStorage(): void {
+    localStorage.removeItem(GlobalConstant.ORDER);
   }
 }
