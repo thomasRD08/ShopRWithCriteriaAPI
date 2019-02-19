@@ -30,7 +30,12 @@
 
 <mat-card class="order-details">
   <mat-card-title>Order details</mat-card-title>
-  <output>{{calculateTotalPrice()}}</output>
-  <button mat-button (click)="confirm()">Confirm order</button>
-  <button mat-button (click)="delete()">Clean cart</button>
+  <div>
+    <output>Total price: </output>
+    <output>{{calculateTotalPrice()}}</output>
+  </div>
+  <div>
+    <button mat-button (click)="confirm()">Confirm order</button>
+    <button mat-button (click)="delete()">Clean cart</button>
+  </div>
 </mat-card>
