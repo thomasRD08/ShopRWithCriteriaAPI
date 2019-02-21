@@ -41,9 +41,9 @@ export class OrderComponent implements OnInit, AfterContentInit {
   }
 
   confirm(): void {
-    let order = new Order(this.dataSource.data, this.authService.getCurrentUser());
-    console.log(order);
-    console.log(typeof order.orderLines[0].product);
+    let order = new Order();
+    order.orderLines = this.dataSource.data;
+    order.user = this.authService.getCurrentUser();
     this.orderService.saveOrder(order).subscribe(() => {
       this.orderLineService.deleteOrderLocalStorage();
       this.router.navigate(['']);

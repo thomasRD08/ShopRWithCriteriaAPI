@@ -15,9 +15,9 @@ VALUES (7, 0, 'The Kite Runner', 11.95, 'Fiction');
 INSERT INTO product(id, version, title, price, type)
 VALUES (8, 0, 'The Help', 9.95, 'Fiction');
 INSERT INTO product(id, version, title, price, type)
-VALUES (9, 0, 'The Oxford History of Ancient Egypt', 12.99, 'Non fiction');
+VALUES (9, 0, 'The Oxford History of Ancient Egypt', 12.99, 'Non-fiction');
 INSERT INTO product(id, version, title, price, type)
-VALUES (10, 0, 'Cooking Basics for Dummies', 14.99, 'Non fiction');
+VALUES (10, 0, 'Cooking Basics for Dummies', 14.99, 'Non-fiction');
 
 INSERT INTO lp(id, artist, lp_genre)
 VALUES (1, 'Black Sabbath', 'ROCK');
