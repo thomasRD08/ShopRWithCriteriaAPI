@@ -32,10 +32,11 @@ public class OrderServiceImpl extends CrudServiceImpl<Order, Long> implements Or
         order.setUser(user);
 
         for (OrderLine orderLine : order.getOrderLines()) {
-            Long id = orderLine.getProduct().getId();
-            Product product = productRepository.findById(id).orElseThrow(() -> new NotFoundException("Product not found"));
+            Product product = productRepository.findById(orderLine.getProduct().getId())
+                    .orElseThrow(() -> new NotFoundException("Product not found"));
             orderLine.getProduct().setVersion(product.getVersion());
             orderLine.getProduct().setType(product.getType());
+            orderLine.setProduct(product);
         }
 
         return orderRepository.save(order);

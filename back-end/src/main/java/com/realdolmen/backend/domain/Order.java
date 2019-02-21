@@ -15,13 +15,13 @@ import java.util.List;
 @EntityListeners(OrderListener.class)
 public class Order {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "time_stamp")
     private Date timeStamp;
     @ManyToOne(cascade = CascadeType.MERGE)
     private User user;
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "order_id")
     private List<OrderLine> orderLines;
 }

@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `shopr`.`non_fiction` (
 -- Table `shopr`.`order`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `shopr`.`order` (
-  `id` BIGINT(20) NOT NULL,
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `time_stamp` DATETIME NULL DEFAULT NULL,
   `user_id` BIGINT(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `shopr`.`order` (
 -- Table `shopr`.`order_line`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `shopr`.`order_line` (
-  `id` BIGINT(20) NOT NULL,
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `amount` INT(11) NULL DEFAULT NULL,
   `product_id` BIGINT(20) NULL DEFAULT NULL,
   `order_id` BIGINT(20) NULL DEFAULT NULL,

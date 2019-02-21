@@ -15,7 +15,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class OrderLine {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Integer amount;
     @ManyToOne(cascade = {CascadeType.MERGE})

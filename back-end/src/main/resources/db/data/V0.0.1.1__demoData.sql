@@ -1,23 +1,23 @@
-INSERT INTO product(id, title, price, type)
-VALUES (1, 'Paranoid', 20.00, 'LP');
-INSERT INTO product(id, title, price, type)
-VALUES (2, 'The Richest Man In Babylon', 18.00, 'LP');
-INSERT INTO product(id, title, price, type)
-VALUES (3, 'Journey In Satchidananda', 25.00, 'LP');
-INSERT INTO product(id, title, price, type)
-VALUES (4, 'League of Legends', 1.00, 'Game');
-INSERT INTO product(id, title, price, type)
-VALUES (5, 'Minecraft', 23.95, 'Game');
-INSERT INTO product(id, title, price, type)
-VALUES (6, 'Artifact', 17.95, 'Game');
-INSERT INTO product(id, title, price, type)
-VALUES (7, 'The Kite Runner', 11.95, 'Fiction');
-INSERT INTO product(id, title, price, type)
-VALUES (8, 'The Help', 9.95, 'Fiction');
-INSERT INTO product(id, title, price, type)
-VALUES (9, 'The Oxford History of Ancient Egypt', 12.99, 'Non fiction');
-INSERT INTO product(id, title, price, type)
-VALUES (10, 'Cooking Basics for Dummies', 14.99, 'Non fiction');
+INSERT INTO product(id, version, title, price, type)
+VALUES (1, 0, 'Paranoid', 20.00, 'Lp');
+INSERT INTO product(id, version, title, price, type)
+VALUES (2, 0, 'The Richest Man In Babylon', 18.00, 'Lp');
+INSERT INTO product(id, version, title, price, type)
+VALUES (3, 0, 'Journey In Satchidananda', 25.00, 'Lp');
+INSERT INTO product(id, version, title, price, type)
+VALUES (4, 0, 'League of Legends', 1.00, 'Game');
+INSERT INTO product(id, version, title, price, type)
+VALUES (5, 0, 'Minecraft', 23.95, 'Game');
+INSERT INTO product(id, version, title, price, type)
+VALUES (6, 0, 'Artifact', 17.95, 'Game');
+INSERT INTO product(id, version, title, price, type)
+VALUES (7, 0, 'The Kite Runner', 11.95, 'Fiction');
+INSERT INTO product(id, version, title, price, type)
+VALUES (8, 0, 'The Help', 9.95, 'Fiction');
+INSERT INTO product(id, version, title, price, type)
+VALUES (9, 0, 'The Oxford History of Ancient Egypt', 12.99, 'Non fiction');
+INSERT INTO product(id, version, title, price, type)
+VALUES (10, 0, 'Cooking Basics for Dummies', 14.99, 'Non fiction');
 
 INSERT INTO lp(id, artist, lp_genre)
 VALUES (1, 'Black Sabbath', 'ROCK');
