@@ -1,7 +1,7 @@
 package com.realdolmen.backend.facade.impl;
 
-import com.realdolmen.backend.domain.User;
 import com.realdolmen.backend.dto.UserDto;
+import com.realdolmen.backend.mapper.UserMapper;
 import com.realdolmen.backend.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,9 +9,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserDtoKarel;
-import static com.realdolmen.backend.data.UserTestDataBuilder.buildUserKarel;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -21,6 +20,8 @@ public class UserFacadeImplTest {
     private UserFacadeImpl userFacade;
     @Mock
     private UserService userService;
+    @Mock
+    private UserMapper userMapper;
 
     @Test
     public void testShouldMockFacade() {
@@ -28,18 +29,17 @@ public class UserFacadeImplTest {
     }
 
     @Test
-    public void testShouldSaveUser() {
-        UserDto userDto = buildUserDtoKarel().build();
+    public void testShouldInvokeServiceSave() {
+        UserDto userDto = new UserDto();
 
-        User user = userFacade.saveUser(userDto);
+        userFacade.saveUser(userDto);
 
-        verify(userService, times(1)).save(user);
+        verify(userService, times(1)).save(any());
     }
 
     @Test
-    public void testShouldFindUserByUsername() {
-        User user = buildUserKarel().build();
-        String username = user.getUsername();
+    public void testShouldInvokeServiceFindByUsername() {
+        String username = "Test";
 
         userFacade.findUserByUsername(username);
 
@@ -47,7 +47,7 @@ public class UserFacadeImplTest {
     }
 
     @Test
-    public void testShouldFindAllUsers() {
+    public void testShouldInvokeServiceFindAll() {
         userFacade.findAllUsers();
 
         verify(userService, times(1)).findAll();
