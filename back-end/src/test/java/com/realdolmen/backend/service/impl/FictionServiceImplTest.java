@@ -26,7 +26,7 @@ public class FictionServiceImplTest {
     private FictionRepository fictionRepository;
 
     @Test
-    public void testShouldSaveFiction() {
+    public void testShouldInvokeRepoSaveAndAssertEquals() {
         Fiction expectedFiction = buildFictionTheHelp().build();
 
         when(fictionRepository.save(any())).thenReturn(expectedFiction);
@@ -38,7 +38,7 @@ public class FictionServiceImplTest {
     }
 
     @Test
-    public void testShouldFindFictionById() {
+    public void testShouldInvokeRepoFindByIdAndAssertEquals() {
         Fiction expectedFiction = buildFictionTheHelp().build();
 
         when(fictionRepository.save(any())).thenReturn(expectedFiction);
@@ -53,7 +53,7 @@ public class FictionServiceImplTest {
     }
 
     @Test
-    public void testShouldFindAllFiction() {
+    public void testShouldInvokeRepoFindAllAndAssertEquals() {
         List<Fiction> expectedFiction = new ArrayList<>();
         expectedFiction.add(buildFictionTheHelp().build());
         expectedFiction.add(buildFictionTheKiteRunner().build());
@@ -66,10 +66,11 @@ public class FictionServiceImplTest {
         assertEquals(2, foundFiction.size());
     }
 
-//    TODO: Edit test
     @Test
-    public void testShouldDeleteFiction() {
+    public void testShouldInvokeRepoDeleteAndAssertEquals() {
         Fiction fiction = buildFictionTheHelp().build();
+
+        doNothing().when(fictionRepository).delete(fiction);
 
         fictionService.delete(fiction);
 

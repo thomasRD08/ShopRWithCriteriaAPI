@@ -26,7 +26,7 @@ public class NonFictionServiceImplTest {
     private NonFictionRepository nonFictionRepository;
 
     @Test
-    public void testShouldSaveNonFiction() {
+    public void testShouldInvokeRepoSaveAndAssertEquals() {
         NonFiction expectedNonFiction = buildNonFictionAncientEgypt().build();
 
         when(nonFictionRepository.save(any())).thenReturn(expectedNonFiction);
@@ -38,7 +38,7 @@ public class NonFictionServiceImplTest {
     }
 
     @Test
-    public void testShouldFindNonFictionById() {
+    public void testShouldInvokeRepoFindByIdAndAssertEquals() {
         NonFiction expectedNonFiction = buildNonFictionAncientEgypt().build();
 
         when(nonFictionRepository.save(any())).thenReturn(expectedNonFiction);
@@ -53,7 +53,7 @@ public class NonFictionServiceImplTest {
     }
 
     @Test
-    public void testShouldFindAllNonFiction() {
+    public void testShouldInvokeRepoFindAllAndAssertEquals() {
         List<NonFiction> expectedNonFiction = new ArrayList<>();
         expectedNonFiction.add(buildNonFictionAncientEgypt().build());
         expectedNonFiction.add(buildNonFictionCooking().build());
@@ -66,10 +66,11 @@ public class NonFictionServiceImplTest {
         assertEquals(2, foundNonFiction.size());
     }
 
-    //    TODO: Edit test
     @Test
-    public void testShouldDeleteNonFiction() {
+    public void testShouldInvokeRepoDeleteAndAssertEquals() {
         NonFiction nonFiction = buildNonFictionAncientEgypt().build();
+
+        doNothing().when(nonFictionRepository).delete(nonFiction);
 
         nonFictionService.delete(nonFiction);
 

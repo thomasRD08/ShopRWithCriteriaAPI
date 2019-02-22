@@ -25,7 +25,7 @@ public class UserServiceImplTest {
     private UserRepository userRepository;
 
     @Test
-    public void testShouldSaveUser() {
+    public void testShouldInvokeRepoSaveAndAssertEquals() {
         // create data
         User expectedUser = buildUserKarel().build();
 
@@ -41,7 +41,7 @@ public class UserServiceImplTest {
     }
 
     @Test
-    public void testShouldFindUserById() {
+    public void testShouldInvokeRepoFindByIdAndAssertEquals() {
         User expectedUser = buildUserKarel().build();
 
         when(userRepository.save(any())).thenReturn(expectedUser);
@@ -56,7 +56,7 @@ public class UserServiceImplTest {
     }
 
     @Test
-    public void testShouldFindUserByUsername() {
+    public void testShouldInvokeRepoFindByUsernameAndAssertEquals() {
         User expectedUser = buildUserKarel().build();
 
         when(userRepository.save(any())).thenReturn(expectedUser);
@@ -71,7 +71,7 @@ public class UserServiceImplTest {
     }
 
     @Test
-    public void testShouldFindAllUsers() {
+    public void testShouldInvokeRepoFindAllAndAssertEquals() {
         List<User> expectedUsers = new ArrayList<>();
         expectedUsers.add(buildUserKarel().build());
         expectedUsers.add(buildUserGuust().build());
@@ -84,10 +84,11 @@ public class UserServiceImplTest {
         assertEquals(2, foundUsers.size());
     }
 
-    //    TODO: Edit test
     @Test
-    public void testShouldDeleteUser() {
+    public void testShouldInvokeRepoDeleteAndAssertEquals() {
         User user = buildUserKarel().build();
+
+        doNothing().when(userRepository).delete(user);
 
         userService.delete(user);
 

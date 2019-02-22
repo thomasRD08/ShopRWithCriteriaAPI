@@ -26,7 +26,7 @@ public class LpServiceImplTest {
     private LpRepository lpRepository;
 
     @Test
-    public void testShouldSaveLp() {
+    public void testShouldInvokeRepoSaveAndAssertEquals() {
         Lp expectedLp = buildLpParanoid().build();
 
         when(lpRepository.save(any())).thenReturn(expectedLp);
@@ -38,7 +38,7 @@ public class LpServiceImplTest {
     }
 
     @Test
-    public void testShouldFindLpById() {
+    public void testShouldInvokeRepoFindByIdAndAssertEquals() {
         Lp expectedLp = buildLpParanoid().build();
 
         when(lpRepository.save(any())).thenReturn(expectedLp);
@@ -53,7 +53,7 @@ public class LpServiceImplTest {
     }
 
     @Test
-    public void testShouldFindAllLps() {
+    public void testShouldInvokeRepoFindAllAndAssertEquals() {
         List<Lp> expectedLps = new ArrayList<>();
         expectedLps.add(buildLpParanoid().build());
         expectedLps.add(buildLpMetallica().build());
@@ -67,7 +67,7 @@ public class LpServiceImplTest {
     }
 
     @Test
-    public void testShouldDeleteLp() {
+    public void testShouldInvokeRepoDeleteAndAssertEquals() {
         Lp lp = buildLpParanoid().build();
 
         doNothing().when(lpRepository).delete(lp);

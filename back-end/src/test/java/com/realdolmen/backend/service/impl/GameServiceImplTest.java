@@ -26,7 +26,7 @@ public class GameServiceImplTest {
     private GameRepository gameRepository;
 
     @Test
-    public void testShouldSaveGame() {
+    public void testShouldInvokeRepoSaveAndAssertEquals() {
         Game expectedGame = buildGameArtifact().build();
 
         when(gameRepository.save(any())).thenReturn(expectedGame);
@@ -38,7 +38,7 @@ public class GameServiceImplTest {
     }
 
     @Test
-    public void testShouldFindGameById() {
+    public void testShouldInvokeRepoFindByIdAndAssertEquals() {
         Game expectedGame = buildGameArtifact().build();
 
         when(gameRepository.save(any())).thenReturn(expectedGame);
@@ -53,7 +53,7 @@ public class GameServiceImplTest {
     }
 
     @Test
-    public void testShouldFindAllGames() {
+    public void testShouldInvokeRepoFindAllAndAssertEquals() {
         List<Game> expectedGames = new ArrayList<>();
         expectedGames.add(buildGameArtifact().build());
         expectedGames.add(buildGameMinecraft().build());
@@ -66,10 +66,11 @@ public class GameServiceImplTest {
         assertEquals(2, foundGames.size());
     }
 
-    //    TODO: Edit test
     @Test
-    public void delete() {
+    public void testShouldInvokeRepoDeleteAndAssertEquals() {
         Game game = buildGameArtifact().build();
+
+        doNothing().when(gameRepository).delete(game);
 
         gameService.delete(game);
 

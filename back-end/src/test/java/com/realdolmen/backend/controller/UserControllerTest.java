@@ -31,7 +31,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void testShouldGetAllUsers() throws Exception {
+    public void testShouldPerformGetAllAndReturnStatusIsOk() throws Exception {
         mockMvc.perform(get("/users"))
                 .andDo(print())
                 .andExpect(status().isOk());

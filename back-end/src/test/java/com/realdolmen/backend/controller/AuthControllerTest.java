@@ -39,7 +39,7 @@ public class AuthControllerTest {
     }
 
     @Test
-    public void testShouldLogInUser() throws Exception {
+    public void testShouldPerformPostAndReturnStatusIsOkAndReturnContentAndInvokeFacadeFindByUsername() throws Exception {
         UserDto expectedUserDto = buildUserDtoKarel().build();
         String username = expectedUserDto.getUsername();
         String content = gson.toJson(expectedUserDto);
@@ -53,19 +53,4 @@ public class AuthControllerTest {
 
         verify(userFacade, times(1)).findUserByUsername(username);
     }
-
-    //TODO: Convert to TestRestTemplate test
-    /*@Test
-    public void testShouldRegisterUser() throws Exception {
-        User user = new User("Karel");
-        UserDto userDto = new UserDto("Karel");
-        String content = gson.toJson(user);
-
-        when(authController.registerUser(userDto)).thenReturn(user);
-
-        mockMvc.perform(post("/register").content(content).contentType(MediaType.APPLICATION_JSON))
-                .andDo(print())
-                .andExpect(status().isCreated())
-                .andExpect(content().string(content));
-    }*/
 }

@@ -11,6 +11,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ActiveProfiles("test")
 public class BackEndApplicationTests {
     @Test
-    public void contextLoads() {
+    public void testShouldCheckContextLoads() {
     }
 }

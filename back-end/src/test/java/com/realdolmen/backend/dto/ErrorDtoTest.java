@@ -11,7 +11,7 @@ public class ErrorDtoTest {
     public ExpectedException expectedException = none();
 
     @Test
-    public void testSuccess() {
+    public void testOnSuccess() {
         ErrorDto.builder()
                 .httpStatus(404)
                 .message("Test")
@@ -19,7 +19,7 @@ public class ErrorDtoTest {
     }
 
     @Test
-    public void testFailOnMissingMessage() {
+    public void testOnFailOnMissingMessage() {
         expectedException.expect(NullPointerException.class);
 
         ErrorDto.builder()
@@ -28,7 +28,7 @@ public class ErrorDtoTest {
     }
 
     @Test
-    public void testFailOnMissingHttpStatus() {
+    public void testOnFailOnMissingHttpStatus() {
         expectedException.expect(NullPointerException.class);
 
         ErrorDto.builder()
