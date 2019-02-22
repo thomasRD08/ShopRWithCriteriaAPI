@@ -3,13 +3,10 @@ package com.realdolmen.backend.mapper;
 import com.realdolmen.backend.domain.Order;
 import com.realdolmen.backend.dto.OrderDto;
 import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = OrderLineMapper.class)
 public interface OrderMapper {
     OrderDto orderToOrderDto(Order order);
 
     Order orderDtoToOrder(OrderDto orderDto);
-
-    void orderDtoToOrder(OrderDto orderDto, @MappingTarget Order order);
 }

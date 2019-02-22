@@ -1,6 +1,5 @@
 package com.realdolmen.backend.dto;
 
-import com.realdolmen.backend.domain.Product;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,5 +10,6 @@ import lombok.Setter;
 public class OrderLineDto {
     private Long id;
     private Integer amount;
-    private Product product;
+//    TODO: Change to ProductDto
+    private ProductDto product;
 }
