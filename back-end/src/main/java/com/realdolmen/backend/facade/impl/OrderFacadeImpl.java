@@ -17,10 +17,10 @@ import java.util.stream.Collectors;
 @Component
 @AllArgsConstructor
 public class OrderFacadeImpl implements OrderFacade {
+    private final OrderService orderService;
     private final OrderMapper orderMapper;
     private final UserMapper userMapper;
     private final OrderLineMapper orderLineMapper;
-    private final OrderService orderService;
 
     @Override
     public OrderDto saveOrder(final OrderDto orderDto) {
