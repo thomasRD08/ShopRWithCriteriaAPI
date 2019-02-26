@@ -27,11 +27,11 @@ INSERT INTO lp(id, artist, lp_genre)
 VALUES (3, 'Alice Coltrane', 'JAZZ');
 
 INSERT INTO game(id, publisher, min_age, game_genre)
-VALUES (4, 'Riot Games', 12, 'MOBA');
+VALUES (4, 'Riot Games', 'TWELVE', 'MOBA');
 INSERT INTO game(id, publisher, min_age, game_genre)
-VALUES (5, 'Mojang', 42, 'SANDBOX');
+VALUES (5, 'Mojang', 'THREE', 'SANDBOX');
 INSERT INTO game(id, publisher, min_age, game_genre)
-VALUES (6, 'Valve', 12, 'RTS');
+VALUES (6, 'Valve', 'SIXTEEN', 'RTS');
 
 INSERT INTO book(id, author, isbn, pages)
 VALUES (7, 'Khaled Hosseini', '978-15-9448-000-3', '371');
