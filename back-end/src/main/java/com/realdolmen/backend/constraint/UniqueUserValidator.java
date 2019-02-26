@@ -14,7 +14,6 @@ public class UniqueUserValidator implements ConstraintValidator<UniqueUser, Stri
 
     @Override
     public void initialize(UniqueUser constraintAnnotation) {
-
     }
 
     @Override
