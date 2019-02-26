@@ -28,12 +28,12 @@ public class OrderServiceImpl extends CrudServiceImpl<Order, Long> implements Or
     @Override
     public Order save(Order order) {
         User user = userRepository.findByUsername(order.getUser().getUsername())
-                .orElseThrow(() -> new NotFoundException("User not found"));
+                .orElseThrow(() -> new NotFoundException("No user found with username " + order.getUser().getUsername()));
         order.setUser(user);
 
         for (OrderLine orderLine : order.getOrderLines()) {
             Product product = productRepository.findById(orderLine.getProduct().getId())
-                    .orElseThrow(() -> new NotFoundException("Product not found"));
+                    .orElseThrow(() -> new NotFoundException("No product found with id " + orderLine.getProduct().getId()));
             orderLine.getProduct().setVersion(product.getVersion());
             orderLine.getProduct().setType(product.getType());
             orderLine.setProduct(product);

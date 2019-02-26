@@ -21,6 +21,6 @@ public class UserServiceImpl extends CrudServiceImpl<User, Long> implements User
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username)
-                .orElseThrow(() -> new NotFoundException("User does not exist"));
+                .orElseThrow(() -> new NotFoundException("No user found with username " + username));
     }
 }
