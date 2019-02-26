@@ -2,14 +2,14 @@ package com.realdolmen.backend.dto;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type", include = JsonTypeInfo.As.PROPERTY)
 @JsonSubTypes({
@@ -21,6 +21,13 @@ import lombok.Setter;
 public abstract class ProductDto {
     private Long id;
     private String title;
-    private Double price;
+    private BigDecimal price;
     private String type;
+
+    ProductDto(Long id, String title, BigDecimal price, String type) {
+        this.id = id;
+        this.title = title;
+        this.price = price;
+        this.type = type;
+    }
 }

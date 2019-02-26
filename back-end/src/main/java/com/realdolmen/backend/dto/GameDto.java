@@ -1,10 +1,11 @@
 package com.realdolmen.backend.dto;
 
-import com.realdolmen.backend.domain.GameGenre;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.math.BigDecimal;
 
 /**
  * Mapstruct 1.2.0.Final does not support mapping via builders.
@@ -16,14 +17,14 @@ import lombok.Setter;
 @NoArgsConstructor
 public class GameDto extends ProductDto {
     private String publisher;
-    private Integer minAge;
-    private GameGenre gameGenre;
+    private String gameMinAge;
+    private String gameGenre;
 
     @Builder
-    public GameDto(Long id, String title, Double price, String type, String publisher, Integer minAge, GameGenre gameGenre) {
+    public GameDto(Long id, String title, BigDecimal price, String type, String publisher, String gameMinAge, String gameGenre) {
         super(id, title, price, type);
         this.publisher = publisher;
-        this.minAge = minAge;
+        this.gameMinAge = gameMinAge;
         this.gameGenre = gameGenre;
     }
 }

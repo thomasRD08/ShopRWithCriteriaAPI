@@ -10,6 +10,5 @@ import lombok.Setter;
 public class OrderLineDto {
     private Long id;
     private Integer amount;
-//    TODO: Change to ProductDto
     private ProductDto product;
 }
