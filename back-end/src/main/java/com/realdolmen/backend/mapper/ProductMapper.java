@@ -16,7 +16,7 @@ public abstract class ProductMapper {
     @Autowired
     private LpMapper lpMapper;
 
-    public ProductDto map(Product product) {
+    ProductDto map(Product product) {
         if (product.getClass().equals(Fiction.class)) {
             return fictionMapper.fictionToFictionDto((Fiction) product);
         } else if (product.getClass().equals(NonFiction.class)) {
@@ -30,7 +30,7 @@ public abstract class ProductMapper {
         }
     }
 
-    public Product map(ProductDto product) {
+    Product map(ProductDto product) {
         if (product.getClass().equals(FictionDto.class)) {
             return fictionMapper.fictionDtoToFiction((FictionDto) product);
         } else if (product.getClass().equals(NonFictionDto.class)) {
