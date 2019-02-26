@@ -27,8 +27,6 @@ public class GameMapperTest {
         assertEquals(game.getPrice(), testGameDto.getPrice());
         assertEquals(game.getType(), testGameDto.getType());
         assertEquals(game.getPublisher(), testGameDto.getPublisher());
-        assertEquals(game.getMinAge(), testGameDto.getMinAge());
-        assertEquals(game.getGameGenre(), testGameDto.getGameGenre());
     }
 
     @Test
@@ -41,8 +39,6 @@ public class GameMapperTest {
         assertEquals(gameDto.getPrice(), testGame.getPrice());
         assertEquals(gameDto.getType(), testGame.getType());
         assertEquals(gameDto.getPublisher(), testGame.getPublisher());
-        assertEquals(gameDto.getMinAge(), testGame.getMinAge());
-        assertEquals(gameDto.getGameGenre(), testGame.getGameGenre());
     }
 
     @Test

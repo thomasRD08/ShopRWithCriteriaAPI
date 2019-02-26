@@ -29,7 +29,6 @@ public class FictionMapperTest {
         assertEquals(fiction.getAuthor(), testFictionDto.getAuthor());
         assertEquals(fiction.getIsbn(), testFictionDto.getIsbn());
         assertEquals(fiction.getPages(), testFictionDto.getPages());
-        assertEquals(fiction.getFictionGenre(), testFictionDto.getFictionGenre());
         assertEquals(fiction.getSummary(), testFictionDto.getSummary());
     }
 
@@ -45,7 +44,6 @@ public class FictionMapperTest {
         assertEquals(fictionDto.getAuthor(), testFiction.getAuthor());
         assertEquals(fictionDto.getIsbn(), testFiction.getIsbn());
         assertEquals(fictionDto.getPages(), testFiction.getPages());
-        assertEquals(fictionDto.getFictionGenre(), testFiction.getFictionGenre());
         assertEquals(fictionDto.getSummary(), testFiction.getSummary());
     }
 

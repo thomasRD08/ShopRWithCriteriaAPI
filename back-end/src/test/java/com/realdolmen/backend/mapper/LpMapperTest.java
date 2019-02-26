@@ -27,7 +27,6 @@ public class LpMapperTest {
         assertEquals(lp.getPrice(), testLpDto.getPrice());
         assertEquals(lp.getType(), testLpDto.getType());
         assertEquals(lp.getArtist(), testLpDto.getArtist());
-        assertEquals(lp.getLpGenre(), testLpDto.getLpGenre());
     }
 
     @Test
@@ -40,7 +39,6 @@ public class LpMapperTest {
         assertEquals(lpDto.getPrice(), testLp.getPrice());
         assertEquals(lpDto.getType(), testLp.getType());
         assertEquals(lpDto.getArtist(), testLp.getArtist());
-        assertEquals(lpDto.getLpGenre(), testLp.getLpGenre());
     }
 
     @Test

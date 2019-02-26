@@ -29,7 +29,6 @@ public class NonFictionMapperTest {
         assertEquals(nonFiction.getAuthor(), testNonFictionDto.getAuthor());
         assertEquals(nonFiction.getIsbn(), testNonFictionDto.getIsbn());
         assertEquals(nonFiction.getPages(), testNonFictionDto.getPages());
-        assertEquals(nonFiction.getNonFictionSubject(), testNonFictionDto.getNonFictionSubject());
     }
 
     @Test
@@ -44,7 +43,6 @@ public class NonFictionMapperTest {
         assertEquals(nonFictionDto.getAuthor(), testNonFiction.getAuthor());
         assertEquals(nonFictionDto.getIsbn(), testNonFiction.getIsbn());
         assertEquals(nonFictionDto.getPages(), testNonFiction.getPages());
-        assertEquals(nonFictionDto.getNonFictionSubject(), testNonFiction.getNonFictionSubject());
     }
 
     @Test
