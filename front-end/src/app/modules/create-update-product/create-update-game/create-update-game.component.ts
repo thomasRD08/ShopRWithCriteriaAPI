@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./create-update-game.component.scss']
 })
 export class CreateUpdateGameComponent implements OnInit {
-  game: Game = new Game();
+  game: Game = new Game('Game');
   id: number;
   pending: boolean;
 

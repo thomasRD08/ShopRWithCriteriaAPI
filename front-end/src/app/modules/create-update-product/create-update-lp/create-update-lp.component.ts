@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./create-update-lp.component.scss']
 })
 export class CreateUpdateLpComponent implements OnInit {
-  lp: Lp = new Lp();
+  lp: Lp = new Lp('Lp');
   id: number;
   pending: boolean;
 

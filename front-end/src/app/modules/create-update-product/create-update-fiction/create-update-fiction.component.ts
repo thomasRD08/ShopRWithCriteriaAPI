@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./create-update-fiction.component.scss']
 })
 export class CreateUpdateFictionComponent implements OnInit {
-  fiction: Fiction = new Fiction();
+  fiction: Fiction = new Fiction('Fiction');
   id: number;
   pending: boolean;
 

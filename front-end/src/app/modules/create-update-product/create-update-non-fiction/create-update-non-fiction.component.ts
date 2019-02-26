@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./create-update-non-fiction.component.scss']
 })
 export class CreateUpdateNonFictionComponent implements OnInit {
-  nonFiction: NonFiction = new NonFiction();
+  nonFiction: NonFiction = new NonFiction('Non-fiction');
   id: number;
   pending: boolean;
 
