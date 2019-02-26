@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/order")
 @RequiredArgsConstructor
@@ -14,7 +16,7 @@ public class OrderController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public OrderDto save(@RequestBody OrderDto orderDto) {
+    public OrderDto save(@RequestBody @Valid OrderDto orderDto) {
         return orderFacade.saveOrder(orderDto);
     }
 }
