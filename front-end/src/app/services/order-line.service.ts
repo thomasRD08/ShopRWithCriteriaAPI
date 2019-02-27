@@ -10,8 +10,8 @@ export class OrderLineService {
   }
 
   addOrderLineToOrderLocalStorage(order: OrderLine[], orderLine: OrderLine): void {
-      order.push(orderLine);
-      localStorage.setItem(GlobalConstant.ORDER, JSON.stringify(order));
+    order.push(orderLine);
+    localStorage.setItem(GlobalConstant.ORDER, JSON.stringify(order));
   }
 
   getCurrentOrderLines(): OrderLine[] {
