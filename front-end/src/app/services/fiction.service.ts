@@ -29,4 +29,8 @@ export class FictionService {
   deleteFictionById(id: number): Observable<any> {
     return this.http.delete<Fiction>(`/api/products/books/fiction/${id}`);
   }
+
+  getFictionGenreLabels(): Observable<string[]> {
+    return this.http.get<string[]>('/api/products/books/fiction/genres')
+  }
 }

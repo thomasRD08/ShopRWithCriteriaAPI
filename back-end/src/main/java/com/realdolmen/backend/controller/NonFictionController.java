@@ -1,12 +1,15 @@
 package com.realdolmen.backend.controller;
 
+import com.realdolmen.backend.domain.NonFictionSubject;
 import com.realdolmen.backend.dto.NonFictionDto;
 import com.realdolmen.backend.facade.impl.NonFictionFacadeImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/products/books/non-fiction")
@@ -45,5 +48,14 @@ public class NonFictionController {
     @ResponseStatus(HttpStatus.OK)
     public void deleteLp(@PathVariable Long id) {
         nonFictionFacade.deleteNonFiction(id);
+    }
+
+    @GetMapping(path = "/subjects")
+    @ResponseStatus(HttpStatus.OK)
+    public List<String> getNonFictionSubjectLabels() {
+        return Arrays
+                .stream(NonFictionSubject.values())
+                .map(NonFictionSubject::getLabel)
+                .collect(Collectors.toList());
     }
 }

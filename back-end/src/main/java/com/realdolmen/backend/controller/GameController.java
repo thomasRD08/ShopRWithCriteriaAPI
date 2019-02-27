@@ -1,12 +1,16 @@
 package com.realdolmen.backend.controller;
 
+import com.realdolmen.backend.domain.GameGenre;
+import com.realdolmen.backend.domain.GameMinAge;
 import com.realdolmen.backend.dto.GameDto;
 import com.realdolmen.backend.facade.impl.GameFacadeImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/products/games")
@@ -45,5 +49,23 @@ public class GameController {
     @ResponseStatus(HttpStatus.OK)
     public void deleteGame(@PathVariable Long id) {
         gameFacade.deleteGame(id);
+    }
+
+    @GetMapping(path = "/genres")
+    @ResponseStatus(HttpStatus.OK)
+    public List<String> getGameGenreLabels() {
+        return Arrays
+                .stream(GameGenre.values())
+                .map(GameGenre::getLabel)
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping(path = "/min-ages")
+    @ResponseStatus(HttpStatus.OK)
+    public List<String> getGameMinAgeLabels() {
+        return Arrays
+                .stream(GameMinAge.values())
+                .map(GameMinAge::getLabel)
+                .collect(Collectors.toList());
     }
 }

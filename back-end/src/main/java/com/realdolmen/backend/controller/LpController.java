@@ -1,12 +1,15 @@
 package com.realdolmen.backend.controller;
 
+import com.realdolmen.backend.domain.LpGenre;
 import com.realdolmen.backend.dto.LpDto;
 import com.realdolmen.backend.facade.impl.LpFacadeImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/products/lps")
@@ -45,5 +48,14 @@ public class LpController {
     @ResponseStatus(HttpStatus.OK)
     public void deleteLp(@PathVariable Long id) {
         lpFacade.deleteLp(id);
+    }
+
+    @GetMapping(path = "/genres")
+    @ResponseStatus(HttpStatus.OK)
+    public List<String> getLpGenreLabels() {
+        return Arrays
+                .stream(LpGenre.values())
+                .map(LpGenre::getLabel)
+                .collect(Collectors.toList());
     }
 }

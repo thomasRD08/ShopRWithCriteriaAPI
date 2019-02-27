@@ -12,11 +12,13 @@ export class CreateUpdateNonFictionComponent implements OnInit {
   nonFiction: NonFiction = new NonFiction('Non-fiction');
   id: number;
   pending: boolean;
+  subjects: string[];
 
   constructor(private nonFictionService: NonFictionService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.nonFictionService.getNonFictionSubjectLabels().subscribe((data) => this.subjects = data);
     this.id = +this.route.snapshot.paramMap.get('id');
     if (this.id) {
       this.nonFictionService.getNonFictionById(this.id).subscribe((data) => {
@@ -32,7 +34,7 @@ export class CreateUpdateNonFictionComponent implements OnInit {
     if (!this.id) {
       this.nonFictionService.createNonFiction(this.nonFiction).subscribe(() => this.router.navigate(['/products/books/non-fiction']))
     } else {
-      this.nonFictionService.updateNonFitionById(this.id, this.nonFiction).subscribe(() => this.router.navigate(['/products/books/non-fiction']));
+      this.nonFictionService.updateNonFictionById(this.id, this.nonFiction).subscribe(() => this.router.navigate(['/products/books/non-fiction']));
     }
   }
 }

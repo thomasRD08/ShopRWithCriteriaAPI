@@ -12,11 +12,15 @@ export class CreateUpdateGameComponent implements OnInit {
   game: Game = new Game('Game');
   id: number;
   pending: boolean;
+  genres: string[];
+  minAges: string[];
 
   constructor(private gameService: GameService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.gameService.getGameGenreLabels().subscribe((data) => this.genres = data);
+    this.gameService.getGameMinAgeLabels().subscribe((data) => this.minAges = data);
     this.id = +this.route.snapshot.paramMap.get('id');
     if (this.id) {
       this.gameService.getGameById(this.id).subscribe((data) => {

@@ -13,7 +13,11 @@
     <input matInput placeholder="Pages" [(ngModel)]="fiction.pages">
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Genre" [(ngModel)]="fiction.fictionGenre">
+    <mat-select placeholder="Genre" [(value)]="fiction.fictionGenre">
+      <mat-option *ngFor="let genre of genres" [value]="genre">
+        {{genre}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="Summary" [(ngModel)]="fiction.summary">

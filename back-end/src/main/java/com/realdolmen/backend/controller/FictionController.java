@@ -1,12 +1,15 @@
 package com.realdolmen.backend.controller;
 
+import com.realdolmen.backend.domain.FictionGenre;
 import com.realdolmen.backend.dto.FictionDto;
 import com.realdolmen.backend.facade.impl.FictionFacadeImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/products/books/fiction")
@@ -45,5 +48,14 @@ public class FictionController {
     @ResponseStatus(HttpStatus.OK)
     public void deleteFiction(@PathVariable Long id) {
         fictionFacade.deleteFiction(id);
+    }
+
+    @GetMapping(path = "/genres")
+    @ResponseStatus(HttpStatus.OK)
+    public List<String> getFictionGenreLabels() {
+        return Arrays
+                .stream(FictionGenre.values())
+                .map(FictionGenre::getLabel)
+                .collect(Collectors.toList());
     }
 }

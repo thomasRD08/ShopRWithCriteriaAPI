@@ -7,10 +7,18 @@
     <input matInput placeholder="Publisher" [(ngModel)]="game.publisher">
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Minimum age" [(ngModel)]="game.gameMinAge">
+    <mat-select placeholder="Minimum age" [(value)]="game.gameMinAge">
+      <mat-option *ngFor="let minAge of minAges" [value]="minAge">
+        {{minAge}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Genre" [(ngModel)]="game.gameGenre">
+    <mat-select placeholder="Genre" [(value)]="game.gameGenre">
+      <mat-option *ngFor="let genre of genres" [value]="genre">
+        {{genre}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="Price" [(ngModel)]="game.price">

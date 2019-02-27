@@ -7,7 +7,11 @@
     <input matInput placeholder="Artist" [(ngModel)]="lp.artist">
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Genre" [(ngModel)]="lp.lpGenre">
+    <mat-select placeholder="Genre" [(value)]="lp.lpGenre">
+      <mat-option *ngFor="let genre of genres" [value]="genre">
+        {{genre}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="Price" [(ngModel)]="lp.price">

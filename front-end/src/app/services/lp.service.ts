@@ -29,4 +29,8 @@ export class LpService {
   deleteLpById(id: number): Observable<any> {
     return this.http.delete<Lp>(`/api/products/lps/${id}`);
   }
+
+  getLpGenreLabels(): Observable<string[]> {
+    return this.http.get<string[]>('/api/products/lps/genres');
+  }
 }

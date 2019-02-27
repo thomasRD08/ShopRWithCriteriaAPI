@@ -12,11 +12,13 @@ export class CreateUpdateFictionComponent implements OnInit {
   fiction: Fiction = new Fiction('Fiction');
   id: number;
   pending: boolean;
+  genres: string[];
 
   constructor(private fictionService: FictionService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.fictionService.getFictionGenreLabels().subscribe((data) => this.genres = data);
     this.id = +this.route.snapshot.paramMap.get('id');
     if (this.id) {
       this.fictionService.getFictionById(this.id).subscribe((data) => {

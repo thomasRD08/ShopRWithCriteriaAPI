@@ -29,4 +29,12 @@ export class GameService {
   deleteGameById(id: number): Observable<any> {
     return this.http.delete<Game>(`/api/products/games/${id}`);
   }
+
+  getGameGenreLabels(): Observable<string[]> {
+    return this.http.get<string[]>('/api/products/games/genres')
+  }
+
+  getGameMinAgeLabels(): Observable<string[]> {
+    return this.http.get<string[]>('/api/products/games/min-ages')
+  }
 }
