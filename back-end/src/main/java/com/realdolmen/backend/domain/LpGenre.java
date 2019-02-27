@@ -6,12 +6,12 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum LpGenre {
-    CLASSICAL ("Classical"),
-    POP ("Pop"),
-    ROCK ("Rock"),
-    ELECTRONIC ("Electronic"),
-    JAZZ ("Jazz"),
-    HIPHOP ("Hip Hop");
+    CLASSICAL("Classical"),
+    POP("Pop"),
+    ROCK("Rock"),
+    ELECTRONIC("Electronic"),
+    JAZZ("Jazz"),
+    HIPHOP("Hip Hop");
 
     private final String label;
 }
