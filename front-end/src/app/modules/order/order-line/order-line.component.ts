@@ -1,8 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {OrderLineService} from "../../../services/order-line.service";
 import {OrderLine} from "../../../models/order-line";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {Product} from "../../../models/product";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-order-line',
@@ -16,7 +17,7 @@ export class OrderLineComponent implements OnInit {
   order: OrderLine[];
   id: number;
 
-  constructor(private orderLineService: OrderLineService, private route: ActivatedRoute, private router: Router) {
+  constructor(private orderLineService: OrderLineService, private route: ActivatedRoute, private location: Location) {
   }
 
   ngOnInit() {
@@ -30,6 +31,6 @@ export class OrderLineComponent implements OnInit {
       this.order = [];
     }
     this.orderLineService.addOrderLineToOrderLocalStorage(this.order, this.orderLine);
-    this.router.navigate(['/cart']);
+    this.location.back();
   }
 }

@@ -1,8 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
-import {Router} from "@angular/router";
 import {User} from "../../../models/user";
-import {UserService} from "../../../services/user.service";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -14,7 +12,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   user: User;
   private userSubscription: Subscription;
 
-  constructor(private authService: AuthService, private userService: UserService, private router: Router) {
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -24,7 +22,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['']);
   }
 
   getCurrentUser() {

@@ -41,13 +41,19 @@ export class OrderComponent implements OnInit, AfterContentInit {
   }
 
   confirm(): void {
-    let order = new Order();
-    order.orderLines = this.dataSource.data;
-    order.user = this.authService.getCurrentUser();
-    this.orderService.saveOrder(order).subscribe(() => {
-      this.orderLineService.deleteOrderLocalStorage();
-      this.router.navigate(['']);
-    });
+    if (this.authService.getCurrentUser() == null) {
+      this.router.navigate(['/login']);
+    } else {
+      let order = new Order();
+
+      order.orderLines = this.dataSource.data;
+      order.user = this.authService.getCurrentUser();
+
+      this.orderService.saveOrder(order).subscribe(() => {
+        this.orderLineService.deleteOrderLocalStorage();
+        this.router.navigate(['']);
+      });
+    }
   }
 
   delete(): void {

@@ -21,7 +21,7 @@
       </mat-menu>
     </li>
     <li class="push-right">
-      <button *ngIf="user" mat-button routerLink="/cart">Shocking Cart</button>
+      <button mat-button routerLink="/cart">Shocking Cart</button>
     </li>
     <li>
       <button *ngIf="user" mat-button [matMenuTriggerFor]="currentUser">{{user.username}}</button>
