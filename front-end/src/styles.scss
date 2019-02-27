@@ -1,17 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-$sky: #caebf2;
-$carbon: #a9a9a9;
-$watermelon: #ff3b3f;
-$neutral: #efefef;
 $fontColor: #585858;
+$neutral: #efefef;
+$white: #ffffff;
+$pink: #f8bee4;
+$lightgreen: #a7e4e5;
+$green: #95d5d5;
 
 html {
   height: 100%;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
   background-image: url(/assets/shockr-retro.jpg);
   background-repeat: repeat;
@@ -20,10 +24,12 @@ body {
 .content {
   width: 70%;
   margin-left: 15%;
+  background-color: $pink;
 }
 
 .mat-button:hover {
-  background-color: $sky;
+  background-color: $lightgreen;
+  color: $white;
 }
 
 .mat-button {
@@ -33,3 +39,4 @@ body {
   padding-left: 8px;
   padding-right: 8px;
 }
+

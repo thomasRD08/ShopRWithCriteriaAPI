@@ -1,17 +1,33 @@
 @import "../../../../styles";
 
 .mat-toolbar {
-  background-color: $neutral;
+  background-color: $white;
   color: $fontColor;
-  margin-top: 15px;
-  margin-bottom: 20px;
-  border-radius: 8px;
+  margin-bottom: 40px;
 }
 
-.left {
-  margin-left: 15px;
+.navigation {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-left: 1%;
+  padding: 0;
+  list-style: none;
 }
 
-.right {
-//TODO: Justify-content flex-end?
+.navigation button {
+  display: block;
 }
+
+.push-right {
+  margin-left: auto;
+}
+
+//.mat-menu-item:hover{
+//  color: $white;
+//}
+
+//.mat-menu-item:hover .mat-menu-ripple {
+//  background-color: $lightgreen;
+//  z-index: -1;
+//}
