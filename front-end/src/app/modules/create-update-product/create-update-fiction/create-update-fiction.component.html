@@ -19,8 +19,8 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="Summary" [(ngModel)]="fiction.summary">
+  <mat-form-field class="summary">
+    <textarea matInput placeholder="Summary" [(ngModel)]="fiction.summary"></textarea>
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="Price" [(ngModel)]="fiction.price">

@@ -7,7 +7,9 @@
       <mat-list-item>{{fiction.isbn}}</mat-list-item>
       <mat-list-item>{{fiction.pages}}</mat-list-item>
       <mat-list-item>{{fiction.fictionGenre}}</mat-list-item>
-      <mat-list-item>{{fiction.summary}}</mat-list-item>
+      <div class="summary">
+        <mat-list-item>{{fiction.summary}}</mat-list-item>
+      </div>
       <mat-list-item>{{fiction.price}}</mat-list-item>
     </mat-list>
     <button mat-button (click)="edit()">Edit</button>
