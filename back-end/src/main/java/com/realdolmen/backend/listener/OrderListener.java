@@ -1,4 +1,4 @@
-package com.realdolmen.backend.domain.listener;
+package com.realdolmen.backend.listener;
 
 import com.realdolmen.backend.domain.Order;
 

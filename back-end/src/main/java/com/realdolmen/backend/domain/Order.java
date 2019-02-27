@@ -1,6 +1,6 @@
 package com.realdolmen.backend.domain;
 
-import com.realdolmen.backend.domain.listener.OrderListener;
+import com.realdolmen.backend.listener.OrderListener;
 import lombok.Getter;
 import lombok.Setter;
 
