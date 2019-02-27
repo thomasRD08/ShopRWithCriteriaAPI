@@ -9,16 +9,16 @@ export class OrderLineService {
   constructor() {
   }
 
-  addOrderLineToOrderLocalStorage(order: OrderLine[], orderLine: OrderLine): void {
-    order.push(orderLine);
-    localStorage.setItem(GlobalConstant.ORDER, JSON.stringify(order));
+  addOrderLineToCartLocalStorage(cart: OrderLine[], orderLine: OrderLine): void {
+    cart.push(orderLine);
+    localStorage.setItem(GlobalConstant.CART, JSON.stringify(cart));
   }
 
-  getCurrentOrderLines(): OrderLine[] {
-    return JSON.parse(localStorage.getItem(GlobalConstant.ORDER));
+  getCurrentCart(): OrderLine[] {
+    return JSON.parse(localStorage.getItem(GlobalConstant.CART));
   }
 
-  deleteOrderLocalStorage(): void {
-    localStorage.removeItem(GlobalConstant.ORDER);
+  deleteCartLocalStorage(): void {
+    localStorage.removeItem(GlobalConstant.CART);
   }
 }

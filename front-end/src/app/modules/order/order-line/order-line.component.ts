@@ -14,7 +14,7 @@ export class OrderLineComponent implements OnInit {
   @Input()
   product: Product;
   orderLine: OrderLine;
-  order: OrderLine[];
+  cart: OrderLine[];
   id: number;
 
   constructor(private orderLineService: OrderLineService, private route: ActivatedRoute, private location: Location) {
@@ -26,11 +26,11 @@ export class OrderLineComponent implements OnInit {
 
   addOrderLineToOrder(): void {
     this.orderLine.product = this.product;
-    this.order = this.orderLineService.getCurrentOrderLines();
-    if (this.order == null) {
-      this.order = [];
+    this.cart = this.orderLineService.getCurrentCart();
+    if (this.cart == null) {
+      this.cart = [];
     }
-    this.orderLineService.addOrderLineToOrderLocalStorage(this.order, this.orderLine);
+    this.orderLineService.addOrderLineToCartLocalStorage(this.cart, this.orderLine);
     this.location.back();
   }
 }

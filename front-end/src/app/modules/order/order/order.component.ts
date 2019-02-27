@@ -23,7 +23,7 @@ export class OrderComponent implements OnInit, AfterContentInit {
   }
 
   ngOnInit() {
-    this.dataSource.data = this.orderLineService.getCurrentOrderLines();
+    this.dataSource.data = this.orderLineService.getCurrentCart();
     if (this.dataSource.data == null) {
       this.dataSource.data = [];
     }
@@ -50,14 +50,14 @@ export class OrderComponent implements OnInit, AfterContentInit {
       order.user = this.authService.getCurrentUser();
 
       this.orderService.saveOrder(order).subscribe(() => {
-        this.orderLineService.deleteOrderLocalStorage();
+        this.orderLineService.deleteCartLocalStorage();
         this.router.navigate(['']);
       });
     }
   }
 
   delete(): void {
-    this.orderLineService.deleteOrderLocalStorage();
+    this.orderLineService.deleteCartLocalStorage();
     this.router.navigate([''])
   }
 }
