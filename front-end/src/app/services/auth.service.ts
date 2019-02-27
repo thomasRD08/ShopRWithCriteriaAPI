@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem(GlobalConstant.USER);
+    localStorage.clear();
     this.userSubject.next();
   }
 
