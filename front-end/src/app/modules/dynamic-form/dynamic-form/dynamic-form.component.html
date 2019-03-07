@@ -1,0 +1,17 @@
+<div class="dynamic-form">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+    <div *ngFor="let formControl of controls" class="form-row">
+      <app-form-control [control]="formControl" [form]="form"></app-form-control>
+    </div>
+
+    <div class="form-row">
+      <button mat-button type="submit" [disabled]="!form.valid">Submit</button>
+    </div>
+
+  </form>
+
+  <div *ngIf="payLoad" class="form-row">
+    <strong>Saved the following values </strong>{{payLoad}}
+  </div>
+</div>

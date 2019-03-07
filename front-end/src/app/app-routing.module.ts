@@ -15,10 +15,12 @@ import {DetailGameComponent} from "./modules/detail-product/detail-game/detail-g
 import {DetailFictionComponent} from "./modules/detail-product/detail-fiction/detail-fiction.component";
 import {DetailNonFictionComponent} from "./modules/detail-product/detail-non-fiction/detail-non-fiction.component";
 import {OrderComponent} from "./modules/order/order/order.component";
+import {SelectProductComponent} from "./modules/product-form/select-product/select-product.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'products/create', component: SelectProductComponent},
   {path: 'products/lp', component: OverviewLpComponent},
   {path: 'products/lp/create', component: CreateUpdateLpComponent},
   {path: 'products/lp/:id', component: DetailLpComponent},

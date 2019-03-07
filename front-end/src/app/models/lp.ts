@@ -1,10 +1,18 @@
 import {Product} from "./product";
 
 export class Lp extends Product {
-  public artist: string;
-  public lpGenre: string;
+  artist: string;
+  lpGenre: string;
 
-  constructor(public type: string) {
-    super(type);
+  constructor(
+    type: string,
+    id?: number,
+    title?: string,
+    price?: number,
+    artist?: string,
+    lpGenre?: string) {
+    super(type, id, title, price);
+    this.artist = artist;
+    this.lpGenre = lpGenre;
   }
 }

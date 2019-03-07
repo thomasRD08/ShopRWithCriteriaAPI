@@ -4,8 +4,9 @@ import {MaterialModule} from "./material.module";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HeaderComponent} from "./header/header.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
+import {NgxMaskModule} from "ngx-mask";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import {RouterModule} from "@angular/router";
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    RouterModule
+    ReactiveFormsModule,
+    RouterModule,
+    NgxMaskModule.forRoot()
   ],
   exports: [
     HeaderComponent,
@@ -25,7 +28,9 @@ import {RouterModule} from "@angular/router";
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    RouterModule
+    ReactiveFormsModule,
+    RouterModule,
+    NgxMaskModule
   ]
 })
 export class SharedModule {

@@ -1,8 +1,17 @@
 export abstract class Product {
-  public id: number;
-  public title: string;
-  public price: number;
+  type: string;
+  id: number;
+  title: string;
+  price: number;
 
-  protected constructor(public type: string) {
+  protected constructor(
+    type: string,
+    id?: number,
+    title?: string,
+    price?: number) {
+    this.type = type;
+    this.id = id;
+    this.title = title;
+    this.price = price;
   }
 }
