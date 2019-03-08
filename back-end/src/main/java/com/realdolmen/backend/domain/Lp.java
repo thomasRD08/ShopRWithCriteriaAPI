@@ -33,7 +33,7 @@ public class Lp extends Product {
 
     @Builder
     public Lp(@NotBlank(message = "Title cannot be blank") @Size(max = 50, message = "Title should not be greater than 50 characters") String title,
-              @NotNull(message = "Price cannot be null") @DecimalMin(value = "0.00", message = "Price should not be less than 0.00") @DecimalMax(value = "1000.00", message = "Price should not be greater than 1000.00") BigDecimal price,
+              @NotNull(message = "Price cannot be null") @DecimalMin(value = "0.01", message = "Price should not be less than 0.01") @DecimalMax(value = "9999.99", message = "Price should not be greater than 9999.99") BigDecimal price,
               String type,
               @NotBlank(message = "Artist cannot be blank") @Size(max = 50, message = "Artist should not be greater than 50 characters") String artist,
               @NotNull(message = "Lp genre cannot be null") LpGenre lpGenre) {

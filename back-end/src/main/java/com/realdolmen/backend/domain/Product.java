@@ -31,8 +31,8 @@ public abstract class Product {
     private String title;
 
     @NotNull(message = "Price cannot be null")
-    @DecimalMin(value = "0.00", message = "Price should not be less than 0.00")
-    @DecimalMax(value = "1000.00", message = "Price should not be greater than 1000.00")
+    @DecimalMin(value = "0.01", message = "Price should not be less than 0.01")
+    @DecimalMax(value = "9999.99", message = "Price should not be greater than 9999.99")
     @Column(name = "price")
     private BigDecimal price;
 
@@ -40,8 +40,8 @@ public abstract class Product {
     private String type;
 
     Product(@NotBlank(message = "Title cannot be blank") @Size(max = 50, message = "Title should not be greater than 50 characters") String title,
-            @NotNull(message = "Price cannot be null") @DecimalMin(value = "0.00", message = "Price should not be less than 0.00") @DecimalMax(value = "1000.00", message = "Price should not be greater than 1000.00") BigDecimal price,
-            String type) {
+                   @NotNull(message = "Price cannot be null") @DecimalMin(value = "0.01", message = "Price should not be less than 0.01") @DecimalMax(value = "9999.99", message = "Price should not be greater than 9999.99") BigDecimal price,
+                   String type) {
         this.title = title;
         this.price = price;
         this.type = type;

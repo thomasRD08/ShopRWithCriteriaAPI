@@ -29,10 +29,11 @@ public class NonFiction extends Book {
 
     @Builder
     public NonFiction(@NotBlank(message = "Title cannot be blank") @Size(max = 50, message = "Title should not be greater than 50 characters") String title,
-                      @NotNull(message = "Price cannot be null") @DecimalMin(value = "0.00", message = "Price should not be less than 0.00") @DecimalMax(value = "1000.00", message = "Price should not be greater than 1000.00") BigDecimal price,
-                      String type, @NotBlank(message = "Author cannot be blank") @Size(max = 50, message = "Author should not be greater than 50 characters") String author,
+                      @NotNull(message = "Price cannot be null") @DecimalMin(value = "0.01", message = "Price should not be less than 0.01") @DecimalMax(value = "9999.99", message = "Price should not be greater than 9999.99") BigDecimal price,
+                      String type,
+                      @NotBlank(message = "Author cannot be blank") @Size(max = 50, message = "Author should not be greater than 50 characters") String author,
                       @NotBlank(message = "ISBN cannot be blank") @ISBN(message = "ISBN is not valid") String isbn,
-                      @NotBlank(message = "Pages cannot be blank") @Pattern(regexp = "^[0-9]{1,15000}$", message = "Pages should consist of numbers and should be between 1 and 15000") String pages,
+                      @NotBlank(message = "Pages cannot be blank") @Pattern(regexp = "^[0-9]{1,99999}$", message = "Pages should consist of numbers and should be between 1 and 99999") String pages,
                       @NotNull(message = "Non-fiction subject cannot be null") NonFictionSubject nonFictionSubject) {
         super(title, price, type, author, isbn, pages);
         this.nonFictionSubject = nonFictionSubject;
