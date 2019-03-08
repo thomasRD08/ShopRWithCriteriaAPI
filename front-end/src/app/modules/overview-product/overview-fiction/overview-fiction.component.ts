@@ -1,5 +1,5 @@
 import {AfterContentInit, Component, OnInit, ViewChild} from '@angular/core';
-import {Fiction} from "../../../models/fiction";
+import {Fiction} from "../../../models/products/fiction";
 import {FictionService} from "../../../services/fiction.service";
 import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
 import {Router} from "@angular/router";

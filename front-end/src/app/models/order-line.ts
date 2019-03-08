@@ -1,4 +1,4 @@
-import {Product} from "./product";
+import {Product} from "./products/product";
 
 export class OrderLine {
   public product: Product;

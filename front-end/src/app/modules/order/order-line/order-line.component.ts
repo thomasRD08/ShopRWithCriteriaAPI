@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {OrderLineService} from "../../../services/order-line.service";
 import {OrderLine} from "../../../models/order-line";
 import {ActivatedRoute} from "@angular/router";
-import {Product} from "../../../models/product";
+import {Product} from "../../../models/products/product";
 import {Location} from "@angular/common";
 
 @Component({

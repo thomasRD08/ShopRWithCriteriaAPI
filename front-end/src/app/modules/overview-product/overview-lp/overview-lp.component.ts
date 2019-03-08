@@ -1,5 +1,5 @@
 import {AfterContentInit, Component, OnInit, ViewChild} from '@angular/core';
-import {Lp} from "../../../models/lp";
+import {Lp} from "../../../models/products/lp";
 import {LpService} from "../../../services/lp.service";
 import {Router} from "@angular/router";
 import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";

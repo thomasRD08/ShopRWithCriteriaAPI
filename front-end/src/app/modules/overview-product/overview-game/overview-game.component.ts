@@ -1,5 +1,5 @@
 import {AfterContentInit, Component, OnInit, ViewChild} from '@angular/core';
-import {Game} from "../../../models/game";
+import {Game} from "../../../models/products/game";
 import {GameService} from "../../../services/game.service";
 import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
 import {Router} from "@angular/router";
