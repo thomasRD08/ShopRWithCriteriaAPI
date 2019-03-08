@@ -1,5 +1,9 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormFactoryService} from "../../../services/form/form-factory.service";
+import {LpService} from "../../../services/lp.service";
+import {GameService} from "../../../services/game.service";
+import {FictionService} from "../../../services/fiction.service";
+import {NonFictionService} from "../../../services/non-fiction.service";
 
 @Component({
   selector: 'app-product-form',
@@ -11,8 +15,8 @@ export class ProductFormComponent implements OnInit, OnChanges {
   @Input() productType: string;
   controls: any[];
 
-  constructor(private ffs: FormFactoryService) {
-  }
+  constructor(private ffs: FormFactoryService, private lpService: LpService, private gameService: GameService,
+              private fictionService: FictionService, private nonFictionService: NonFictionService) {}
 
   ngOnInit() {
   }
@@ -20,19 +24,28 @@ export class ProductFormComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     switch (this.productType) {
       case 'Lp': {
-        this.controls = this.ffs.getLpForm();
+        this.lpService.getLpGenreLabels().subscribe(genres =>
+          this.controls = this.ffs.getLpForm(genres)
+        );
         break;
       }
       case 'Game': {
-        this.controls = this.ffs.getGameForm();
+        this.gameService.getGameMinAgeLabels().subscribe(minAges =>
+          this.gameService.getGameGenreLabels().subscribe(genres =>
+            this.controls = this.ffs.getGameForm(genres, minAges)
+          ));
         break;
       }
       case 'Fiction': {
-        this.controls = this.ffs.getFictionForm();
+        this.fictionService.getFictionGenreLabels().subscribe(genres =>
+          this.controls = this.ffs.getFictionForm(genres)
+        );
         break;
       }
       case 'Non-fiction': {
-        this.controls = this.ffs.getNonFictionForm();
+        this.nonFictionService.getNonFictionSubjectLabels().subscribe(subjects =>
+          this.controls = this.ffs.getNonFictionForm(subjects)
+        );
         break;
       }
       default: {

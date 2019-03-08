@@ -14,18 +14,21 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   form: FormGroup;
   payLoad = '';
 
-  constructor(private fcs: FormControlService) { }
+  constructor(private fcs: FormControlService) {
+  }
 
   ngOnInit() {
     this.form = this.fcs.toFormGroup(this.controls);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+
     this.form = this.fcs.toFormGroup(this.controls);
   }
 
   onSubmit() {
     this.payLoad = JSON.stringify(this.form.value);
   }
+
 
 }
