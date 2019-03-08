@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Lp} from "../../../models/lp";
+import {Lp} from "../../../models/products/lp";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LpService} from "../../../services/lp.service";
 

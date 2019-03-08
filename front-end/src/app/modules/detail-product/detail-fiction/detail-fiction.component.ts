@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Fiction} from "../../../models/fiction";
+import {Fiction} from "../../../models/products/fiction";
 import {FictionService} from "../../../services/fiction.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
