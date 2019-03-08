@@ -1,7 +1,7 @@
 import {BaseControl} from "./base-control";
 
 export class TextInputControl extends BaseControl<string>{
-  controlType = 'string';
+  controlType = 'text';
   type: string;
 
   constructor(options: {} = {}) {

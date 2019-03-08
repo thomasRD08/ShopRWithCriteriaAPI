@@ -1,7 +1,7 @@
 import {BaseControl} from "./base-control";
 
-export class PriceInputControl extends BaseControl<string> {
-  controlType = 'price';
+export class IsbnInputControl extends BaseControl<string> {
+  controlType = 'isbn';
   type: string;
 
   constructor(options: {} = {}) {
