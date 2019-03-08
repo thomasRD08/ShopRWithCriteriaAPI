@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {LpService} from "../../../services/lp.service";
-import {Lp} from "../../../models/lp";
+import {Lp} from "../../../models/products/lp";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
