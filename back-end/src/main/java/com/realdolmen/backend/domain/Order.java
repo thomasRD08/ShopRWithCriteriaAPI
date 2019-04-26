@@ -32,4 +32,18 @@ public class Order {
     @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "order_id")
     private List<OrderLine> orderLines;
+
+    public Order(Order order)
+    {
+        this.id = order.id;
+        this.timeStamp = order.timeStamp;
+        this.user = order.user;
+        this.orderLines = order.orderLines;
+    }
+
+    public Order()
+    {
+
+    }
+
 }

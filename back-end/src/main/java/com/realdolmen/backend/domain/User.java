@@ -39,4 +39,8 @@ public class User {
     public User(@NotBlank(message = "Username cannot be blank") @Max(value = 30, message = "Username should not be greater than 30 characters") String username) {
         this.username = username;
     }
+    public String getUsername()
+    {
+        return this.username;
+    }
 }
