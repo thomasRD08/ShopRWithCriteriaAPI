@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-title>Create Non-fiction</mat-card-title>
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="nonFiction.title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Author" [(ngModel)]="nonFiction.author">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="ISBN" [(ngModel)]="nonFiction.isbn">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Pages" [(ngModel)]="nonFiction.pages">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Subject" [(value)]="nonFiction.nonFictionSubject">
+      <mat-option *ngFor="let subject of subjects" [value]="subject">
+        {{subject}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Price" [(ngModel)]="nonFiction.price">
+  </mat-form-field>
+  <button mat-button [disabled]="pending" (click)="confirm()">Confirm</button>
+</mat-card>

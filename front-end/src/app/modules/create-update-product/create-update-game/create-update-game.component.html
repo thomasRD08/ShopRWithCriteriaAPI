@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-title>Create Game</mat-card-title>
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="game.title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Publisher" [(ngModel)]="game.publisher">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Minimum age" [(value)]="game.gameMinAge">
+      <mat-option *ngFor="let minAge of minAges" [value]="minAge">
+        {{minAge}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Genre" [(value)]="game.gameGenre">
+      <mat-option *ngFor="let genre of genres" [value]="genre">
+        {{genre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Price" [(ngModel)]="game.price">
+  </mat-form-field>
+  <button mat-button [disabled]="pending" (click)="confirm()">Confirm</button>
+</mat-card>

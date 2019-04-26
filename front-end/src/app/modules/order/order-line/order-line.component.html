@@ -1,0 +1,6 @@
+<mat-card>
+  <mat-form-field>
+    <input matInput placeholder="Amount" [(ngModel)]="orderLine.amount">
+  </mat-form-field>
+  <button mat-button (click)="addOrderLineToOrder()">Add to cart</button>
+</mat-card>

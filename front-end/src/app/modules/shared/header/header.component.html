@@ -1,0 +1,37 @@
+<mat-toolbar>
+  <span>ShockR</span>
+
+  <ul class="navigation">
+    <li>
+      <button mat-button [matMenuTriggerFor]="overview">Overview</button>
+      <mat-menu #overview="matMenu">
+        <button mat-menu-item routerLink="/products/lp">Lps</button>
+        <button mat-menu-item routerLink="/products/game">Games</button>
+        <button mat-menu-item routerLink="/products/books/fiction">Fiction</button>
+        <button mat-menu-item routerLink="/products/books/non-fiction">Non-fiction</button>
+      </mat-menu>
+    </li>
+    <li>
+      <button mat-button [matMenuTriggerFor]="addProduct">Add Products</button>
+      <mat-menu #addProduct="matMenu">
+        <button mat-menu-item routerLink="/products/lp/create">Add Lp</button>
+        <button mat-menu-item routerLink="/products/game/create">Add Game</button>
+        <button mat-menu-item routerLink="/products/books/fiction/create">Add Fiction</button>
+        <button mat-menu-item routerLink="/products/books/non-fiction/create">Add Non-fiction</button>
+      </mat-menu>
+    </li>
+    <li>
+      <button mat-button routerLink="/products/create">Add Products (WIP)</button>
+    </li>
+    <li class="push-right">
+      <button mat-button routerLink="/cart">Shocking Cart</button>
+    </li>
+    <li>
+      <button *ngIf="user" mat-button [matMenuTriggerFor]="currentUser">{{user.username}}</button>
+      <mat-menu #currentUser="matMenu">
+        <button mat-menu-item (click)="logout()">Log Out</button>
+      </mat-menu>
+      <button *ngIf="!user" mat-button routerLink="/login">Log In/ Register</button>
+    </li>
+  </ul>
+</mat-toolbar>

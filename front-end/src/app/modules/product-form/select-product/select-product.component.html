@@ -1,0 +1,13 @@
+<div class="select-type">
+  <mat-card>
+    <mat-form-field>
+      <mat-select placeholder="Select a product" [(ngModel)]="productType">
+        <mat-option *ngFor="let type of getProductTypeEnumValues()" [value]="type">
+          {{type}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card>
+</div>
+
+<app-product-form *ngIf="productType" [productType]="productType"></app-product-form>

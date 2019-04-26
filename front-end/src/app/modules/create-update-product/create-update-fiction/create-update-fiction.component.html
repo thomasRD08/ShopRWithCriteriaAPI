@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-title>Create Fiction</mat-card-title>
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="fiction.title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Author" [(ngModel)]="fiction.author">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="ISBN" [(ngModel)]="fiction.isbn">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Pages" [(ngModel)]="fiction.pages">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Genre" [(value)]="fiction.fictionGenre">
+      <mat-option *ngFor="let genre of genres" [value]="genre">
+        {{genre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="summary">
+    <textarea matInput placeholder="Summary" [(ngModel)]="fiction.summary"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Price" [(ngModel)]="fiction.price">
+  </mat-form-field>
+  <button mat-button [disabled]="pending" (click)="confirm()">Confirm</button>
+</mat-card>

@@ -1,0 +1,14 @@
+<div class="details">
+  <mat-card>
+    <mat-card-title>Details</mat-card-title>
+    <mat-list role="list" *ngIf="lp">
+      <mat-list-item>{{lp.title}}</mat-list-item>
+      <mat-list-item>{{lp.artist}}</mat-list-item>
+      <mat-list-item>{{lp.lpGenre}}</mat-list-item>
+      <mat-list-item>{{lp.price}}</mat-list-item>
+    </mat-list>
+    <button mat-button (click)="edit()">Edit</button>
+    <button mat-button (click)="delete()">Delete</button>
+  </mat-card>
+</div>
+<app-order-line [product]="lp"></app-order-line>

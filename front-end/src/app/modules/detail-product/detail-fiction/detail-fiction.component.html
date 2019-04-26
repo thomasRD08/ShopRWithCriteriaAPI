@@ -1,0 +1,19 @@
+<div class="details">
+  <mat-card>
+    <mat-card-title>Details</mat-card-title>
+    <mat-list role="list" *ngIf="fiction">
+      <mat-list-item>{{fiction.title}}</mat-list-item>
+      <mat-list-item>{{fiction.author}}</mat-list-item>
+      <mat-list-item>{{fiction.isbn}}</mat-list-item>
+      <mat-list-item>{{fiction.pages}}</mat-list-item>
+      <mat-list-item>{{fiction.fictionGenre}}</mat-list-item>
+      <div class="summary">
+        <mat-list-item>{{fiction.summary}}</mat-list-item>
+      </div>
+      <mat-list-item>{{fiction.price}}</mat-list-item>
+    </mat-list>
+    <button mat-button (click)="edit()">Edit</button>
+    <button mat-button (click)="delete()">Delete</button>
+  </mat-card>
+</div>
+<app-order-line [product]="fiction"></app-order-line>

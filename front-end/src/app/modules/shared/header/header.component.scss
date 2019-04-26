@@ -1,0 +1,32 @@
+@import "../../../../styles";
+
+.mat-toolbar {
+  background-color: $white;
+  margin-bottom: 40px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-left: 1%;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation button {
+  display: block;
+}
+
+.push-right {
+  margin-left: auto;
+}
+
+//.mat-menu-item:hover{
+//  color: $white;
+//}
+
+//.mat-menu-item:hover .mat-menu-ripple {
+//  background-color: $lightgreen;
+//  z-index: -1;
+//}

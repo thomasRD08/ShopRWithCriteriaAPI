@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-title>Games</mat-card-title>
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+      <td mat-cell *matCellDef="let game">{{game.title}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="publisher">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Publisher</th>
+      <td mat-cell *matCellDef="let game">{{game.publisher}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+      <td mat-cell *matCellDef="let game">{{game.price}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="detail">
+      <th mat-header-cell *matHeaderCellDef>Detail</th>
+      <td mat-cell *matCellDef="let game">
+        <button mat-button (click)="navigateToDetail(game)">Detail</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+</mat-card>

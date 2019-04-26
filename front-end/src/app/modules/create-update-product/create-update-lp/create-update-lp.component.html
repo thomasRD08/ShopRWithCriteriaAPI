@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>Create Lp</mat-card-title>
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="lp.title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Artist" [(ngModel)]="lp.artist">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Genre" [(value)]="lp.lpGenre">
+      <mat-option *ngFor="let genre of genres" [value]="genre">
+        {{genre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Price" [(ngModel)]="lp.price">
+  </mat-form-field>
+  <button mat-button [disabled]="pending" (click)="confirm()">Confirm</button>
+</mat-card>

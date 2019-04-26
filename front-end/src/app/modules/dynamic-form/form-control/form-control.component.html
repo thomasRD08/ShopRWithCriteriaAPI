@@ -1,0 +1,64 @@
+<div class="form-control" [formGroup]="form">
+  <div [ngSwitch]="control.controlType">
+    <div *ngSwitchCase="'text'">
+      <mat-form-field>
+        <mat-label>{{control.label}}</mat-label>
+        <input matInput [placeholder]="control.placeholder"
+               [formControlName]="control.key"
+               [id]="control.key"
+               [type]="control.type"
+               [required]=""/>
+      </mat-form-field>
+    </div>
+
+    <div *ngSwitchCase="'isbn'">
+      <mat-form-field>
+        <mat-label>{{control.label}}</mat-label>
+        <input matInput [placeholder]="control.placeholder"
+               [formControlName]="control.key"
+               [id]="control.key"
+               [type]="control.type"
+               [required]=""/>
+      </mat-form-field>
+    </div>
+
+    <div *ngSwitchCase="'price'">
+      <mat-form-field>
+        <mat-label>{{control.label}}</mat-label>
+        <input matInput [placeholder]="control.placeholder"
+               [formControlName]="control.key"
+               [id]="control.key"
+               [type]="control.type"
+               [required]=""/>
+      </mat-form-field>
+    </div>
+
+    <div *ngSwitchCase="'textarea'">
+      <mat-form-field>
+        <mat-label>{{control.label}}</mat-label>
+        <textarea matInput #input [placeholder]="control.placeholder"
+                  [formControlName]="control.key"
+                  [id]="control.key"
+                  [type]="control.type"
+                  [required]=""></textarea>
+        <mat-hint align="end">{{input.value?.length || 0}}/500</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div *ngSwitchCase="'dropdown'">
+      <mat-form-field>
+        <mat-label>{{control.label}}</mat-label>
+        <mat-select [formControlName]="control.key" [id]="control.key" [required]="" [value]="control.value">
+          <mat-option *ngFor="let opt of control.options" value="{{opt}}">
+            {{opt}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="errorMessage" *ngIf="!isValid && (control.key.dirty || control.key.touched)">
+    {{control.label}} is required
+  </div>
+
+</div>
