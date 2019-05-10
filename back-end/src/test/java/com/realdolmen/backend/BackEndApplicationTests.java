@@ -1,4 +1,4 @@
-package com.realdolmen.backend;
+/*package com.realdolmen.backend;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,4 +13,4 @@ public class BackEndApplicationTests {
     @Test
     public void testShouldCheckContextLoads() {
     }
-}
+}*/
