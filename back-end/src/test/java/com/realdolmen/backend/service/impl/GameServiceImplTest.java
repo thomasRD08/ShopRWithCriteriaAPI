@@ -2,6 +2,7 @@ package com.realdolmen.backend.service.impl;
 
 import com.realdolmen.backend.domain.Game;
 import com.realdolmen.backend.repository.GameRepository;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

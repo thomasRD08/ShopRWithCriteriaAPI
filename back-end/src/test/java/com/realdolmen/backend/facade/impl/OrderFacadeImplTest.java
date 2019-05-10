@@ -5,6 +5,7 @@ import com.realdolmen.backend.mapper.OrderLineMapper;
 import com.realdolmen.backend.mapper.OrderMapper;
 import com.realdolmen.backend.mapper.UserMapper;
 import com.realdolmen.backend.service.OrderService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

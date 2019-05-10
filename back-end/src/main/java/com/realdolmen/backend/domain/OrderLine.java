@@ -28,6 +28,11 @@ public class OrderLine {
     private Integer amount;
 
     @NotNull(message = "Product cannot be null")
-    @ManyToOne(cascade = {CascadeType.MERGE})
+    @OneToOne
     private Product product;
+
+    public OrderLine(@NotNull(message = "Amount cannot be null") @Min(value = 1, message = "Amount should not be less than 1") @Max(value = 100, message = "Amount should not be greater than 100") Integer amount, @NotNull(message = "Product cannot be null") Product product) {
+        this.amount = amount;
+        this.product = product;
+    }
 }

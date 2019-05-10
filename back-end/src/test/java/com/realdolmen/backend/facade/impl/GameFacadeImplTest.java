@@ -4,6 +4,7 @@ import com.realdolmen.backend.domain.Game;
 import com.realdolmen.backend.dto.GameDto;
 import com.realdolmen.backend.mapper.GameMapper;
 import com.realdolmen.backend.service.GameService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;

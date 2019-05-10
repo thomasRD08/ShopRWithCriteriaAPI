@@ -4,6 +4,7 @@ import com.realdolmen.backend.domain.Fiction;
 import com.realdolmen.backend.dto.FictionDto;
 import com.realdolmen.backend.mapper.FictionMapper;
 import com.realdolmen.backend.service.FictionService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;

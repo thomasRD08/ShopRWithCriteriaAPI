@@ -25,7 +25,8 @@ public class Order {
     private Date timeStamp;
 
     @NotNull(message = "User cannot be null")
-    @ManyToOne(cascade = CascadeType.MERGE)
+    //@ManyToOne(cascade = CascadeType.MERGE)
+    @OneToOne
     private User user;
 
     @NotEmpty(message = "Order lines cannot be null or empty")
@@ -46,4 +47,31 @@ public class Order {
 
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public Date getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(Date timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<OrderLine> getOrderLines() {
+        return orderLines;
+    }
+
+    public void setOrderLines(List<OrderLine> orderLines) {
+        this.orderLines = orderLines;
+    }
 }

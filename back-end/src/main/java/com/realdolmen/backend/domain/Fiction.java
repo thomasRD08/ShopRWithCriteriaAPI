@@ -28,7 +28,7 @@ public class Fiction extends Book {
     private FictionGenre fictionGenre;
 
     @NotBlank(message = "Summary cannot be blank")
-    @Max(value = 500, message = "Summary should not be greater than 500 characters")
+    @Size(max = 500, message = "Summary should not be greater than 500 characters")
     @Column(name = "summary")
     private String summary;
 
@@ -40,7 +40,7 @@ public class Fiction extends Book {
                    @NotBlank(message = "ISBN cannot be blank") @ISBN(message = "ISBN is not valid") String isbn,
                    @NotBlank(message = "Pages cannot be blank") @Pattern(regexp = "^[0-9]{1,99999}$", message = "Pages should consist of numbers and should be between 1 and 99999") String pages,
                    @NotNull(message = "Fiction genre cannot be null") FictionGenre fictionGenre,
-                   @NotBlank(message = "Summary cannot be blank") @Max(value = 500, message = "Summary should not be greater than 500 characters") String summary) {
+                   @NotBlank(message = "Summary cannot be blank") @Size(max = 500, message = "Summary should not be greater than 500 characters") String summary) {
         super(title, price, type, author, isbn, pages);
         this.fictionGenre = fictionGenre;
         this.summary = summary;

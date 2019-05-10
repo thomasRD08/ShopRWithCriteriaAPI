@@ -2,6 +2,7 @@ package com.realdolmen.backend.mapper;
 
 import com.realdolmen.backend.domain.NonFiction;
 import com.realdolmen.backend.dto.NonFictionDto;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

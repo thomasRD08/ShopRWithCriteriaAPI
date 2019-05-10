@@ -4,6 +4,7 @@ import com.realdolmen.backend.domain.Lp;
 import com.realdolmen.backend.dto.LpDto;
 import com.realdolmen.backend.mapper.LpMapper;
 import com.realdolmen.backend.service.LpService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;

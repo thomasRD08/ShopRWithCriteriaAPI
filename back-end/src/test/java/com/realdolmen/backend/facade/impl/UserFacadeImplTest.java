@@ -3,6 +3,7 @@ package com.realdolmen.backend.facade.impl;
 import com.realdolmen.backend.dto.UserDto;
 import com.realdolmen.backend.mapper.UserMapper;
 import com.realdolmen.backend.service.UserService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
